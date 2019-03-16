@@ -7,16 +7,11 @@ const LogoWrapper = styled.div`
     color: white !important;
     font-size: 1.4rem;
   }
-
-  strong {
-    margin-left: 3px;
-  }
 `;
 
 const Logo = () => (
   <LogoWrapper>
-    GRANT
-    <strong>CENTER</strong>
+    GRANT <strong>CENTER</strong>
   </LogoWrapper>
 );
 

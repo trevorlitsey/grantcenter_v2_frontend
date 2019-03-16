@@ -3,7 +3,7 @@ import { object } from 'prop-types';
 import { Link } from 'gatsby';
 import Navbar from 'react-bulma-components/lib/components/navbar';
 
-import Logo from './Logo';
+import Logo from './logo';
 
 class Nav extends React.PureComponent {
   state = {
