@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react';
+import Footer from 'react-bulma-components/lib/components/footer';
 
-import './Footer.css'
+import './Footer.css';
 
-const Footer = () => {
+const SiteFooter = () => {
   return (
-    <footer className="footer">
-      <div className="content has-text-centered">
-        <p>© 2018 Grant Center. All Rights Reserved.</p>
-      </div>
-    </footer>
-  )
-}
+    <Footer>
+      <p className="has-text-centered">
+        © 2018 Grant Center. All Rights Reserved.
+      </p>
+    </Footer>
+  );
+};
 
-export default Footer
+export default SiteFooter;

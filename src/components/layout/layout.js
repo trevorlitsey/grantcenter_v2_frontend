@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 
 import favicon from '../../images/favicon.png';
 import Nav from './nav';
-import Footer from './footer';
+import SiteFooter from './footer';
 
 import 'react-bulma-components/src/index.sass';
 
 const SiteLayout = ({ children }) => {
   return (
-    <div className="wrapper--site">
+    <Fragment>
       <Helmet
         title="Grant Center"
         meta={[
@@ -43,9 +43,9 @@ const SiteLayout = ({ children }) => {
         }}
       />
       <Nav />
-      <div className="children--site">{children}</div>
-      <Footer />
-    </div>
+      {children}
+      <SiteFooter />
+    </Fragment>
   );
 };
 

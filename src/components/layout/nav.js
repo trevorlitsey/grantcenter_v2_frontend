@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
-import Link from 'gatsby-link';
+import { object } from 'prop-types';
+import { Link } from 'gatsby';
 import Navbar from 'react-bulma-components/lib/components/navbar';
 
 import Logo from './Logo';
@@ -10,11 +11,15 @@ class Nav extends React.PureComponent {
   };
 
   static propTypes = {
-    currentUser: null,
+    currentUser: object,
   };
 
   static defaultProps = {
     currentUser: null,
+  };
+
+  toggleOpen = () => {
+    this.setState({ open: !this.state.open });
   };
 
   render() {
@@ -24,28 +29,25 @@ class Nav extends React.PureComponent {
     return (
       <Navbar color="black" active={open}>
         <Navbar.Brand>
-          <Navbar.Item>
-            <Link to="/">
-              <Logo />
-            </Link>
+          <Navbar.Item renderAs={Link} to="/">
+            <Logo />
           </Navbar.Item>
-          <Navbar.Burger
-            active={open}
-            onClick={() =>
-              this.setState({
-                open: !open,
-              })
-            }
-          />
+          <Navbar.Burger active={open} onClick={this.toggleOpen} />
         </Navbar.Brand>
-        <Navbar.Menu active={open}>
+        <Navbar.Menu>
           <Navbar.Container position="end">
             {currentUser ? (
-              <Navbar.Item href="#">App</Navbar.Item>
+              <Navbar.Item renderAs={Link} to="/app">
+                App
+              </Navbar.Item>
             ) : (
               <Fragment>
-                <Navbar.Item href="#">Sign In</Navbar.Item>
-                <Navbar.Item href="#">Sign Up</Navbar.Item>
+                <Navbar.Item renderAs={Link} to="/signin">
+                  Sign In
+                </Navbar.Item>
+                <Navbar.Item renderAs={Link} to="/signup">
+                  Sign Up
+                </Navbar.Item>
               </Fragment>
             )}
           </Navbar.Container>

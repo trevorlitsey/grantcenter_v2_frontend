@@ -1,12 +1,23 @@
 import React from 'react';
+import { styled } from 'linaria/react';
 
-import './logo.css';
+const LogoWrapper = styled.div`
+  &,
+  &:hover {
+    color: white !important;
+    font-size: 1.4rem;
+  }
+
+  strong {
+    margin-left: 3px;
+  }
+`;
 
 const Logo = () => (
-  <div className="grantcenter-logo">
+  <LogoWrapper>
     GRANT
     <strong>CENTER</strong>
-  </div>
+  </LogoWrapper>
 );
 
 export default Logo;
