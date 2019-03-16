@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from 'react-bulma-components/lib/components/footer';
 
-import './Footer.css';
+import './footer.css';
 
 const SiteFooter = () => {
   return (
