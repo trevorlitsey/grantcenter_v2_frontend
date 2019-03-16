@@ -1,0 +1,9 @@
+.container--index {
+  max-width: 900px;
+  margin: auto;
+}
+
+.background--blue {
+  background-color: #128deb;
+  background-image: url('../images/ag-square.png');
+}

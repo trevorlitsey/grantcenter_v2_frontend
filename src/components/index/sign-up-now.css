@@ -1,0 +1,62 @@
+.container--sign-up {
+  padding: 50px 0;
+}
+
+.container--sign-up .content {
+  margin: 10px 50px 0;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid white;
+}
+
+.container--sign-up .content h1 {
+  color: white;
+  font-size: 52px;
+}
+
+.container--sign-up .content h1 strong {
+  color: white;
+}
+
+.container--sign-up .content h2 {
+  color: white;
+  font-size: 26px;
+  margin-bottom: 40px;
+}
+
+.container--sign-up .content p {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.container--sign-up .content p a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.container--sign-up .content strong {
+  color: white;
+}
+
+.container--sign-up .content a {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.container--sign-up .content > * {
+  color: black;
+}
+
+@media (max-width: 520px) {
+  .container--sign-up .content {
+    padding: 0px;
+  }
+  .container--sign-up .content h1 {
+    font-size: 36px;
+  }
+  .container--sign-up .content h2 {
+    font-size: 20px;
+  }
+}
