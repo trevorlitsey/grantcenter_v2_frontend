@@ -1,10 +1,10 @@
 import { css } from 'linaria';
 
-const extraSmall = 4;
-const small = 8;
-const medium = 12;
-const large = 16;
-const extraLarge = 20;
+export const extraSmall = 4;
+export const small = 8;
+export const medium = 12;
+export const large = 16;
+export const extraLarge = 20;
 
 export const marginBottom = {
   extraSmall: css`

@@ -5,6 +5,8 @@ import Section from 'react-bulma-components/lib/components/section';
 import Button from 'react-bulma-components/lib/components/button';
 import Heading from 'react-bulma-components/lib/components/heading';
 
+import { extraLarge } from '../../styles/spacing';
+
 const SignUpNow = () => (
   <Section className="has-text-centered">
     <Content>
@@ -22,7 +24,14 @@ const SignUpNow = () => (
       >
         All your grants in one place.
       </Heading>
-      <Button size="large" outlined color="white" renderAs={Link} to="/signup">
+      <Button
+        style={{ marginBottom: extraLarge }}
+        size="large"
+        outlined
+        color="white"
+        renderAs={Link}
+        to="/signup"
+      >
         SIGN UP NOW
       </Button>
     </Content>

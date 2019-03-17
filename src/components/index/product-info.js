@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Heading from 'react-bulma-components/lib/components/heading';
 
 import allGrants from '../../images/allGrants.png';
 
 import './product-info.css';
 
-const Icon = () => (
+const ArrowIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -18,81 +19,58 @@ const Icon = () => (
   </svg>
 );
 
-const ProductInfo = () => (
-  <div className="hero--sign-up hero--blue">
-    <div className="content--product-page">
-      <div className="wrapper--product-info">
-        <h1 className="title">FREE during BETA period</h1>
-        <h1 className="subtitle">Then $7/month</h1>
-        <ul>
-          <li>
-            <Icon />
-            <p>
-              Receive full access for 12 months as a BETA subscriber
-              <br />
-              <small>No credit card required.</small>
-            </p>
-          </li>
+const ListItem = ({ title, text }) => (
+  <li>
+    <ArrowIcon />
+    <p className="has-text-weight-semibold is-size-5">
+      {title}
+      <br />
+      <small className="has-text-weight-normal is-size-6">{text}</small>
+    </p>
+  </li>
+);
 
-          <li>
-            <Icon />
-            <p>
-              Unlimited grant, funder, contact and project records
-              <br />
-              <small>
-                Upload grants by csv. Download all your data when you need it.
-              </small>
-            </p>
-          </li>
-          <li>
-            <Icon />
-            <p>
-              Unlimited team members
-              <br />
-              <small>Two tiers of access available.</small>
-            </p>
-          </li>
-          <li>
-            <Icon />
-            <p>
-              Automatic email reminders
-              <br />
-              <small>
-                Customizable by frequency and proximity of deadline.
-              </small>
-            </p>
-          </li>
-          <li>
-            <Icon />{' '}
-            <p>
-              Goal tracking
-              <br />
-              <small>Stay on top of budget progress for the fiscal year.</small>
-            </p>
-          </li>
-          <li className="li-support">
-            <Icon />{' '}
-            <p>
-              Support
-              <br />
-              <small>
-                Questions? Contact the Grant Center team at{' '}
-                <a
-                  href="mailto:support@grantcenter.io"
-                  style={{ color: 'white' }}
-                >
-                  support@grantcenter.io
-                </a>
-                . We're here to help any time.
-              </small>
-            </p>
-          </li>
-        </ul>
-      </div>
-      <div className="app-preview">
-        <img src={allGrants} alt="app preview" />
-      </div>
-    </div>
+const ProductInfo = () => (
+  <div className="product-info--wrapper has-text-white">
+    <Heading className="has-text-white">FREE during BETA period</Heading>
+    <Heading className="has-text-white" subtitle>
+      Then $7/month
+    </Heading>
+    <ul>
+      <ListItem
+        title="Receive full access for 12 months as a BETA subscriber"
+        text="No credit card required."
+      />
+      <ListItem
+        title="Unlimited grant, funder, contact and project records"
+        text="Upload grants by csv. Download all your data when you need it."
+      />
+      <ListItem
+        title="Unlimited team members"
+        text="Two tiers of access available."
+      />
+      <ListItem
+        title="Automatic email reminders"
+        text="Customizable by frequency and proximity of deadline."
+      />
+      <ListItem
+        title="Goal tracking"
+        text="Stay on top of budget progress for the fiscal year."
+      />
+      <ListItem
+        title="Support"
+        text={
+          <Fragment>
+            Questions? Contact the Grant Center team at{' '}
+            <a href="mailto:support@grantcenter.io" className="has-text-white">
+              support@grantcenter.io
+            </a>
+            . We're here to help any time.
+          </Fragment>
+        }
+      />
+    </ul>
+    <img className="block is-hidden-mobile" src={allGrants} alt="app preview" />
   </div>
 );
 
