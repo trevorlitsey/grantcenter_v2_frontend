@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { arrayOf, shape, string } from 'prop-types';
+import { arrayOf, shape, string, number } from 'prop-types';
 import { Link } from 'gatsby';
 import Table from 'react-bulma-components/lib/components/table';
 
@@ -11,6 +11,7 @@ class GrantList extends PureComponent {
         funder: shape({
           name: string.isRequired,
         }).isRequired,
+        amount: number.isRequired,
       })
     ).isRequired,
   };
@@ -22,6 +23,7 @@ class GrantList extends PureComponent {
         funder: {
           name: 'Ford Foundation',
         },
+        amount: 10000,
       },
     ],
   };
@@ -35,6 +37,7 @@ class GrantList extends PureComponent {
           <tr>
             <th>Name</th>
             <th>Funder</th>
+            <th>Request Amount</th>
           </tr>
         </thead>
         <tbody>
@@ -50,6 +53,7 @@ class GrantList extends PureComponent {
                   {grant.funder.name}
                 </Link>
               </td>
+              <td>${grant.amount.toLocaleString()}</td>
             </tr>
           ))}
         </tbody>

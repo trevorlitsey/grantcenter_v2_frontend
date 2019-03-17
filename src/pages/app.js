@@ -19,8 +19,8 @@ export default () => (
   <SiteLayout>
     <Router>
       <App path="/app" />
-      <Grants path="/app/grants" />
       <Grant path="/app/grant/:id" />
+      <Grants path="/app/grants" />
       <Reports path="/app/reports" />
       <Funders path="/app/funders" />
       <Contacts path="/app/contacts" />
