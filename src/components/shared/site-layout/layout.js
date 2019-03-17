@@ -1,13 +1,18 @@
 import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
+import { styled } from 'linaria/react';
 
-import favicon from '../../images/favicon.png';
+import favicon from '../../../images/favicon.png';
 import Nav from './nav';
 import SiteFooter from './footer';
 
 import 'react-bulma-components/src/index.sass';
 
-const SiteLayout = ({ children }) => {
+const ChildrenWrapper = styled.div`
+  min-height: 85vh;
+`;
+
+const SiteLayout = ({ children, ...props }) => {
   return (
     <Fragment>
       <Helmet
@@ -24,7 +29,6 @@ const SiteLayout = ({ children }) => {
           async
           src="https://www.googletagmanager.com/gtag/js?id=UA-114939328-2"
         />
-
         <link rel="icon" href={favicon} type="image/x-icon" />
       </Helmet>
       <script
@@ -43,7 +47,7 @@ const SiteLayout = ({ children }) => {
         }}
       />
       <Nav />
-      {children}
+      <ChildrenWrapper {...props}>{children}</ChildrenWrapper>
       <SiteFooter />
     </Fragment>
   );

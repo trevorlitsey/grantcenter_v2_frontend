@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 
-import Layout from '../components/layout';
+import SiteLayout from '../components/shared/site-layout';
 
 class SignIn extends PureComponent {
   render() {
-    return <Layout>Sign in</Layout>;
+    return <SiteLayout>Sign in</SiteLayout>;
   }
 }
 

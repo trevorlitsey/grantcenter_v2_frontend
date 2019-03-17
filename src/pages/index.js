@@ -1,20 +1,20 @@
 import React from 'react';
 
-import Layout from '../components/layout';
+import SiteLayout from '../components/shared/site-layout';
 import ProductInfo from '../components/index/product-info';
 import SignUpNow from '../components/index/sign-up-now';
 
 import './index.css';
 
 const IndexPage = () => (
-  <Layout>
+  <SiteLayout>
     <div className="background--blue">
       <div className="container--index">
         <SignUpNow />
         <ProductInfo />
       </div>
     </div>
-  </Layout>
+  </SiteLayout>
 );
 
 export default IndexPage;
