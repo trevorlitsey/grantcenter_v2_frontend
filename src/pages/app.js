@@ -2,7 +2,8 @@ import React from 'react';
 import { Router } from '@reach/router';
 
 import SiteLayout from '../components/shared/site-layout';
-import Grants from '../components/grants';
+import Grants from '../components/grants/grants';
+import Grant from '../components/grants/grant';
 
 const App = () => <h1>This is the App</h1>;
 
@@ -19,6 +20,7 @@ export default () => (
     <Router>
       <App path="/app" />
       <Grants path="/app/grants" />
+      <Grant path="/app/grant/:id" />
       <Reports path="/app/reports" />
       <Funders path="/app/funders" />
       <Contacts path="/app/contacts" />

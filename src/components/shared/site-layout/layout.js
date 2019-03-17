@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, memo } from 'react';
 import Helmet from 'react-helmet';
 import { styled } from 'linaria/react';
 import Hero from 'react-bulma-components/lib/components/hero';
@@ -60,4 +60,4 @@ const SiteLayout = ({ children, ...props }) => {
   );
 };
 
-export default SiteLayout;
+export default memo(SiteLayout);
