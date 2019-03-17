@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { styled } from 'linaria/react';
+import Hero from 'react-bulma-components/lib/components/hero';
 
 import favicon from '../../../images/favicon.png';
 import Nav from './nav';
@@ -9,7 +10,7 @@ import SiteFooter from './footer';
 import 'react-bulma-components/src/index.sass';
 
 const ChildrenWrapper = styled.div`
-  min-height: 85vh;
+  flex: 1;
 `;
 
 const SiteLayout = ({ children, ...props }) => {
@@ -46,9 +47,15 @@ const SiteLayout = ({ children, ...props }) => {
          `,
         }}
       />
-      <Nav />
-      <ChildrenWrapper {...props}>{children}</ChildrenWrapper>
-      <SiteFooter />
+      <Hero size="fullheight">
+        <Hero.Head renderAs="header">
+          <Nav />
+        </Hero.Head>
+        <ChildrenWrapper {...props}>{children}</ChildrenWrapper>
+        <Hero.Footer>
+          <SiteFooter />
+        </Hero.Footer>
+      </Hero>
     </Fragment>
   );
 };

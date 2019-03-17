@@ -7,12 +7,10 @@ import SignUpNow from '../components/index/sign-up-now';
 import './index.css';
 
 const IndexPage = () => (
-  <SiteLayout>
-    <div className="background--blue">
-      <div className="container--index">
-        <SignUpNow />
-        <ProductInfo />
-      </div>
+  <SiteLayout className="background--blue">
+    <div className="container--index">
+      <SignUpNow />
+      <ProductInfo />
     </div>
   </SiteLayout>
 );
