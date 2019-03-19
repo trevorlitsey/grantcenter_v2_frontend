@@ -32,7 +32,7 @@ class Nav extends React.PureComponent {
           <Navbar.Item renderAs={Link} to="/">
             <Logo />
           </Navbar.Item>
-          <Navbar.Burger active={open} onClick={this.toggleOpen} />
+          <Navbar.Burger onClick={this.toggleOpen} />
         </Navbar.Brand>
         <Navbar.Menu>
           {currentUser ? (

@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import { number, shape, string } from 'prop-types';
 
 import AppLayout from '../shared/app-layout';
+import GrantHeader from './grant-header';
+import GrantContacts from './grant-contacts';
 
 const breadcrumbs = [
   {
@@ -33,10 +35,24 @@ class SingleGrantPage extends PureComponent {
   static defaultProps = {
     grant: {
       name: 'Summer 2018',
-      foundation: {
+      funder: {
         name: 'Ford Foundation',
       },
+      project: {
+        name: '2018 Education Initiative',
+      },
       requestAmount: 10000,
+      id: '123',
+      name: 'This is a grant',
+      requestAmount: 1000,
+      awardAmount: 500,
+      confidence: 80,
+      dueDate: '2018-10-09',
+      isRolling: false,
+      status: 'SUBMITTED',
+      tags: ['genOp', 'summer 2018'],
+      notes: 'these are some notes',
+      archived: false,
     },
   };
 
@@ -45,11 +61,13 @@ class SingleGrantPage extends PureComponent {
 
     return (
       <AppLayout
-        title={`${grant.foundation.name} – ${grant.name}`}
+        title={`${grant.funder.name} – ${grant.name}`}
         breadcrumbs={breadcrumbs}
       >
+        <GrantHeader />
+        <GrantContacts />
         <p>{grant.name}</p>
-        <p>{grant.foundation.name}</p>
+        <p>{grant.funder.name}</p>
         <p>${grant.requestAmount.toLocaleString()}</p>
       </AppLayout>
     );
