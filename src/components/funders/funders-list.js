@@ -11,7 +11,6 @@ class FundersList extends PureComponent {
       shape({
         id: string.isRequired,
         name: string.isRequired,
-        location: string,
         missionFocus: string,
         annualGiving: number,
       })
@@ -23,7 +22,6 @@ class FundersList extends PureComponent {
       {
         id: '123',
         name: 'Ford Foundation',
-        location: '123 Main St, Minneapolis, MN 55408',
         missionFocus: 'Arts and Education',
         annualGiving: 10000,
       },
@@ -39,7 +37,6 @@ class FundersList extends PureComponent {
           <tr>
             <th>Name</th>
             <th>Location</th>
-            <th>Mission Focus</th>
             <th>Annual Giving</th>
           </tr>
         </thead>
@@ -51,7 +48,6 @@ class FundersList extends PureComponent {
                   <Link to={`app/funder/${funder.id}`}>{funder.name}</Link>
                 </strong>
               </td>
-              <td>{funder.location || fallback}</td>
               <td>{funder.missionFocus || fallback}</td>
               <td>
                 {funder.annualGiving
