@@ -69,7 +69,7 @@ class SingleGrantPage extends PureComponent {
       <AppLayout
         title={grant.name}
         subtitle={
-          <Link to={`/funder/${grant.funder.id}`}>{grant.funder.name}</Link>
+          <Link to={`/app/funder/${grant.funder.id}`}>{grant.funder.name}</Link>
         }
         breadcrumbs={breadcrumbs}
       >

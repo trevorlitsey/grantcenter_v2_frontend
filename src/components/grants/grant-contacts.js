@@ -25,7 +25,7 @@ const ContactCard = ({ id, name, notes, email, phone }) => (
       <Media>
         <Media.Item>
           <Heading size={4} renderAs="h3">
-            <Link to={`/contact/${id}`}>{name}</Link>
+            <Link to={`/app/contact/${id}`}>{name}</Link>
           </Heading>
         </Media.Item>
       </Media>
@@ -40,7 +40,7 @@ const ContactCard = ({ id, name, notes, email, phone }) => (
       </Content>
     </Card.Content>
     <Card.Footer>
-      <Card.Footer.Item renderAs={Link} to={`/contact/${id}`}>
+      <Card.Footer.Item renderAs={Link} to={`/app/contact/${id}`}>
         View
       </Card.Footer.Item>
     </Card.Footer>

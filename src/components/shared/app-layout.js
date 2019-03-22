@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { arrayOf, bool, node, shape, string } from 'prop-types';
 import { Link } from 'gatsby';
+
 import Breadcrumb from 'react-bulma-components/lib/components/breadcrumb';
 import Container from 'react-bulma-components/lib/components/container';
 import Heading from 'react-bulma-components/lib/components/heading';
@@ -40,17 +41,17 @@ class AppLayout extends PureComponent {
 
     return (
       <Section>
-        {breadcrumbs && (
-          <Breadcrumb
-            items={breadcrumbs.map(breadcrumb => ({
-              ...breadcrumb,
-              to: breadcrumb.url,
-            }))}
-            hrefAttr="to"
-            renderAs={Link}
-          />
-        )}
         <Container>
+          {breadcrumbs && (
+            <Breadcrumb
+              items={breadcrumbs.map(breadcrumb => ({
+                ...breadcrumb,
+                to: breadcrumb.url,
+              }))}
+              hrefAttr="to"
+              renderAs={Link}
+            />
+          )}
           <Heading size={3}>{title}</Heading>
           <Heading size={4} subtitle renderAs="p">
             {subtitle}
