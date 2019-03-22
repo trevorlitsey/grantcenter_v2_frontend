@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { arrayOf, bool, node, shape, string } from 'prop-types';
+import { arrayOf, bool, node, oneOfType, shape, string } from 'prop-types';
 import { Link } from 'gatsby';
 
 import Breadcrumb from 'react-bulma-components/lib/components/breadcrumb';
@@ -15,7 +15,7 @@ class AppLayout extends PureComponent {
     ),
     children: node.isRequired,
     title: string.isRequired,
-    subtitle: string,
+    subtitle: oneOfType([node, string]),
   };
 
   static defaultProps = {
