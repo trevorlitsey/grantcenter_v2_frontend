@@ -1,32 +1,37 @@
 import React, { PureComponent } from 'react';
+import { number, string } from 'prop-types';
+
 import Level from 'react-bulma-components/lib/components/level';
-import Heading from 'react-bulma-components/lib/components/heading';
 import Box from 'react-bulma-components/lib/components/box';
 
-const style = {
-  textAlign: 'center',
-};
+import LevelItem from '../shared/level-item';
 
-const Item = ({ title, text }) => (
-  <Level.Item style={style}>
-    <div>
-      <Heading renderAs="p" heading>
-        {title}
-      </Heading>
-      <Heading renderAs="p">{text}</Heading>
-    </div>
-  </Level.Item>
-);
+import { formatDate, formatDollarAmount } from '../../helpers';
 
 class GrantHeader extends PureComponent {
+  static propTypes = {
+    dueDate: string.isRequired,
+    requestAmount: number.isRequired,
+    awardAmount: number,
+    confidence: number.isRequired,
+  };
+
   render() {
+    const { dueDate, requestAmount, awardAmount, confidence } = this.props;
+
     return (
       <Box>
         <Level>
-          <Item title="Due Date" text="Jan 1, 2019" />
-          <Item title="Request Amount" text="$3,210" />
-          <Item title="Award Amount" text="TBD" />
-          <Item title="Confidence" text="80%" />
+          <LevelItem title="Due Date" text={formatDate(dueDate)} />
+          <LevelItem
+            title="Request Amount"
+            text={formatDollarAmount(requestAmount)}
+          />
+          <LevelItem
+            title="Award Amount"
+            text={awardAmount ? formatDollarAmount(awardAmount) : 'TBD'}
+          />
+          <LevelItem title="Confidence" text={`${confidence}%`} />
         </Level>
       </Box>
     );

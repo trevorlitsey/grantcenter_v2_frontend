@@ -3,7 +3,7 @@ import { arrayOf, shape, string, number } from 'prop-types';
 import { Link } from 'gatsby';
 import Table from 'react-bulma-components/lib/components/table';
 
-class GrantList extends PureComponent {
+class GrantsList extends PureComponent {
   static propTypes = {
     grants: arrayOf(
       shape({
@@ -62,4 +62,4 @@ class GrantList extends PureComponent {
   }
 }
 
-export default GrantList;
+export default GrantsList;

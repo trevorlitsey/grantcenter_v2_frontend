@@ -3,9 +3,9 @@ import { arrayOf, string } from 'prop-types';
 
 import Tag from 'react-bulma-components/lib/components/tag';
 
-import SectionWithTitle from '../shared/section-with-title';
+import SectionWithTitle from './section-with-title';
 
-class GrantTags extends PureComponent {
+class Tags extends PureComponent {
   static propTypes = {
     tags: arrayOf(string).isRequired,
   };
@@ -16,8 +16,8 @@ class GrantTags extends PureComponent {
     return (
       <SectionWithTitle title="Tags">
         <Tag.Group>
-          {tags.map(tag => (
-            <Tag>{tag}</Tag>
+          {tags.map((tag, i) => (
+            <Tag key={tag + i}>{tag}</Tag>
           ))}
         </Tag.Group>
       </SectionWithTitle>
@@ -25,4 +25,4 @@ class GrantTags extends PureComponent {
   }
 }
 
-export default GrantTags;
+export default Tags;

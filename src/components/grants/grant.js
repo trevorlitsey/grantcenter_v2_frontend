@@ -5,9 +5,9 @@ import { Link } from 'gatsby';
 import AppLayout from '../shared/app-layout';
 import GrantHeader from './grant-header';
 import GrantInfo from './grant-info';
-import GrantNotes from './grant-notes';
-import GrantTags from './grant-tags';
-import GrantContacts from './grant-contacts';
+import Notes from '../shared/notes';
+import Tags from '../shared/tags';
+import Contacts from '../shared/contacts';
 
 const breadcrumbs = [
   {
@@ -67,21 +67,26 @@ class SingleGrantPage extends PureComponent {
 
     return (
       <AppLayout
-        title={grant.name}
+        breadcrumbs={breadcrumbs}
         subtitle={
           <Link to={`/app/funder/${grant.funder.id}`}>{grant.funder.name}</Link>
         }
-        breadcrumbs={breadcrumbs}
+        title={grant.name}
       >
         <GrantInfo
-          status={grant.status}
           isRolling={grant.isRolling}
           project={grant.project}
+          status={grant.status}
         />
-        <GrantHeader />
-        <GrantNotes notes={grant.notes} />
-        <GrantTags tags={grant.tags} />
-        <GrantContacts contacts={grant.contacts} />
+        <GrantHeader
+          awardAmount={grant.awardAmount}
+          confidence={grant.confidence}
+          dueDate={grant.dueDate}
+          requestAmount={grant.requestAmount}
+        />
+        <Notes notes={grant.notes} />
+        <Tags tags={grant.tags} />
+        <Contacts contacts={grant.contacts} />
       </AppLayout>
     );
   }

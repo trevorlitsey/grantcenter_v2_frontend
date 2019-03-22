@@ -1,3 +1,4 @@
+import Grant from './grant';
 import Grants from './grants';
 
-export default Grants;
+export { Grant, Grants };
