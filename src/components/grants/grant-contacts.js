@@ -1,12 +1,14 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { arrayOf, shape } from 'prop-types';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 
 import Card from 'react-bulma-components/lib/components/card';
 import Media from 'react-bulma-components/lib/components/media';
-import Content from 'react-bulma-components/lib/components/content';
 import Heading from 'react-bulma-components/lib/components/heading';
+import Content from 'react-bulma-components/lib/components/content';
+
+import SectionWithTitle from '../shared/section-with-title';
 
 import { Contact } from '../../config/prop-types';
 import { contacts } from '../../data/contacts';
@@ -22,7 +24,7 @@ const ContactCard = ({ id, name, notes, email, phone }) => (
     <Card.Content>
       <Media>
         <Media.Item>
-          <Heading size={4}>
+          <Heading size={4} renderAs="h3">
             <Link to={`/contact/${id}`}>{name}</Link>
           </Heading>
         </Media.Item>
@@ -58,16 +60,13 @@ class GrantContacts extends PureComponent {
     const { contacts } = this.props;
 
     return (
-      <Fragment>
-        <Heading renderAs="h2" size={4}>
-          Contacts
-        </Heading>
+      <SectionWithTitle title="Contacts">
         <ContactsGridWrapper>
           {contacts.map(contact => (
             <ContactCard key={contact.id} {...contact} />
           ))}
         </ContactsGridWrapper>
-      </Fragment>
+      </SectionWithTitle>
     );
   }
 }

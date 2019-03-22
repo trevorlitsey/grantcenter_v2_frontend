@@ -1,8 +1,12 @@
 import React, { PureComponent } from 'react';
 import { number, shape, string } from 'prop-types';
+import { Link } from 'gatsby';
 
 import AppLayout from '../shared/app-layout';
 import GrantHeader from './grant-header';
+import GrantInfo from './grant-info';
+import GrantNotes from './grant-notes';
+import GrantTags from './grant-tags';
 import GrantContacts from './grant-contacts';
 
 const breadcrumbs = [
@@ -36,9 +40,11 @@ class SingleGrantPage extends PureComponent {
     grant: {
       name: 'Summer 2018',
       funder: {
+        id: '123',
         name: 'Ford Foundation',
       },
       project: {
+        id: '123',
         name: '2018 Education Initiative',
       },
       requestAmount: 10000,
@@ -61,14 +67,21 @@ class SingleGrantPage extends PureComponent {
 
     return (
       <AppLayout
-        title={`${grant.funder.name} – ${grant.name}`}
+        title={grant.name}
+        subtitle={
+          <Link to={`/funder/${grant.funder.id}`}>{grant.funder.name}</Link>
+        }
         breadcrumbs={breadcrumbs}
       >
+        <GrantInfo
+          status={grant.status}
+          isRolling={grant.isRolling}
+          project={grant.project}
+        />
         <GrantHeader />
-        <GrantContacts />
-        <p>{grant.name}</p>
-        <p>{grant.funder.name}</p>
-        <p>${grant.requestAmount.toLocaleString()}</p>
+        <GrantNotes notes={grant.notes} />
+        <GrantTags tags={grant.tags} />
+        <GrantContacts contacts={grant.contacts} />
       </AppLayout>
     );
   }

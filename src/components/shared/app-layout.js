@@ -14,6 +14,7 @@ class AppLayout extends PureComponent {
     ),
     children: node.isRequired,
     title: string.isRequired,
+    subtitle: string,
   };
 
   static defaultProps = {
@@ -35,7 +36,7 @@ class AppLayout extends PureComponent {
   };
 
   render() {
-    const { breadcrumbs, children, title } = this.props;
+    const { breadcrumbs, children, title, subtitle } = this.props;
 
     return (
       <Section>
@@ -51,6 +52,9 @@ class AppLayout extends PureComponent {
         )}
         <Container>
           <Heading size={3}>{title}</Heading>
+          <Heading size={4} subtitle renderAs="p">
+            {subtitle}
+          </Heading>
           {children}
         </Container>
       </Section>
