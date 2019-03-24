@@ -36,7 +36,7 @@ class FundersList extends PureComponent {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Location</th>
+            <th>Mission Focus</th>
             <th>Annual Giving</th>
           </tr>
         </thead>

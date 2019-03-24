@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { object } from 'prop-types';
 import { Link } from 'gatsby';
+import { Location } from '@reach/router';
 import Navbar from 'react-bulma-components/lib/components/navbar';
 
 import Logo from './logo';
@@ -12,10 +13,17 @@ class Nav extends React.PureComponent {
 
   static propTypes = {
     currentUser: object,
+    location: object.isRequired,
   };
 
   static defaultProps = {
     currentUser: {},
+  };
+
+  componentDidUpdate = prevProps => {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.setState({ open: !this.state.open });
+    }
   };
 
   toggleOpen = () => {
@@ -42,39 +50,19 @@ class Nav extends React.PureComponent {
                   App
                 </Navbar.Link>
                 <Navbar.Dropdown>
-                  <Navbar.Item
-                    onClick={this.toggleOpen}
-                    renderAs={Link}
-                    to="/app/grants"
-                  >
+                  <Navbar.Item renderAs={Link} to="/app/grants">
                     Grants
                   </Navbar.Item>
-                  <Navbar.Item
-                    onClick={this.toggleOpen}
-                    renderAs={Link}
-                    to="/app/reports"
-                  >
+                  <Navbar.Item renderAs={Link} to="/app/reports">
                     Reports
                   </Navbar.Item>
-                  <Navbar.Item
-                    onClick={this.toggleOpen}
-                    renderAs={Link}
-                    to="/app/funders"
-                  >
+                  <Navbar.Item renderAs={Link} to="/app/funders">
                     Funders
                   </Navbar.Item>
-                  <Navbar.Item
-                    onClick={this.toggleOpen}
-                    renderAs={Link}
-                    to="/app/contacts"
-                  >
+                  <Navbar.Item renderAs={Link} to="/app/contacts">
                     Contacts
                   </Navbar.Item>
-                  <Navbar.Item
-                    onClick={this.toggleOpen}
-                    renderAs={Link}
-                    to="/app/projects"
-                  >
+                  <Navbar.Item renderAs={Link} to="/app/projects">
                     Projects
                   </Navbar.Item>
                 </Navbar.Dropdown>
@@ -83,28 +71,15 @@ class Nav extends React.PureComponent {
           ) : null}
           <Navbar.Container position="end">
             {currentUser ? (
-              <Navbar.Item
-                onClick={this.toggleOpen}
-                renderAs="a"
-                href="javascript:void(0)"
-                role="button"
-              >
+              <Navbar.Item renderAs="a" href="javascript:void(0)" role="button">
                 Sign Out
               </Navbar.Item>
             ) : (
               <Fragment>
-                <Navbar.Item
-                  onClick={this.toggleOpen}
-                  renderAs={Link}
-                  to="/signin"
-                >
+                <Navbar.Item renderAs={Link} to="/signin">
                   Sign In
                 </Navbar.Item>
-                <Navbar.Item
-                  onClick={this.toggleOpen}
-                  renderAs={Link}
-                  to="/signup"
-                >
+                <Navbar.Item renderAs={Link} to="/signup">
                   Sign Up
                 </Navbar.Item>
               </Fragment>
@@ -116,4 +91,8 @@ class Nav extends React.PureComponent {
   }
 }
 
-export default Nav;
+export default props => (
+  <Location>
+    {({ location }) => <Nav location={location} {...props} />}
+  </Location>
+);
