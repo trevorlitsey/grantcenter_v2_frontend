@@ -1,7 +1,26 @@
 import React, { PureComponent } from 'react';
 import { arrayOf, shape, string, number } from 'prop-types';
-import { Link } from 'gatsby';
-import Table from 'react-bulma-components/lib/components/table';
+
+import List from '../shared/list';
+
+const KEYS = [
+  {
+    title: 'Name',
+    key: 'name',
+    to: '/app/grant/',
+    id: 'id',
+  },
+  {
+    title: 'Funder',
+    key: 'funder.name',
+    to: '/app/funder/',
+    id: 'funder.id',
+  },
+  {
+    title: 'Request Amount',
+    key: 'requestAmount',
+  },
+];
 
 class GrantsList extends PureComponent {
   static propTypes = {
@@ -9,6 +28,7 @@ class GrantsList extends PureComponent {
       shape({
         name: string.isRequired,
         funder: shape({
+          id: string.isRequired,
           name: string.isRequired,
         }).isRequired,
         amount: number.isRequired,
@@ -19,11 +39,13 @@ class GrantsList extends PureComponent {
   static defaultProps = {
     grants: [
       {
+        id: '123',
         name: 'Summer 2018',
         funder: {
+          id: '123',
           name: 'Ford Foundation',
         },
-        amount: 10000,
+        requestAmount: 10000,
       },
     ],
   };
@@ -31,34 +53,12 @@ class GrantsList extends PureComponent {
   render() {
     const { grants } = this.props;
 
-    return (
-      <Table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Funder</th>
-            <th>Request Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          {grants.map(grant => (
-            <tr>
-              <td>
-                <strong>
-                  <Link to="app/grant/123">{grant.name}</Link>
-                </strong>
-              </td>
-              <td>
-                <Link to="/app/funder/456" title="Ford Foundation">
-                  {grant.funder.name}
-                </Link>
-              </td>
-              <td>${grant.amount.toLocaleString()}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    );
+    const formattedGrants = grants.map(grant => ({
+      ...grant,
+      requestAmount: '$' + grant.requestAmount.toLocaleString(),
+    }));
+
+    return <List items={formattedGrants} keys={KEYS} />;
   }
 }
 
