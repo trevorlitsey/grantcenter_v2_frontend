@@ -45,35 +45,35 @@ class Nav extends React.PureComponent {
         <Navbar.Menu>
           {currentUser ? (
             <Navbar.Container>
-              <Navbar.Item dropdown hoverable>
-                <Navbar.Link renderAs={Link} to="/app">
-                  App
-                </Navbar.Link>
-                <Navbar.Dropdown>
-                  <Navbar.Item renderAs={Link} to="/app/grants">
-                    Grants
-                  </Navbar.Item>
-                  <Navbar.Item renderAs={Link} to="/app/reports">
-                    Reports
-                  </Navbar.Item>
-                  <Navbar.Item renderAs={Link} to="/app/funders">
-                    Funders
-                  </Navbar.Item>
-                  <Navbar.Item renderAs={Link} to="/app/contacts">
-                    Contacts
-                  </Navbar.Item>
-                  <Navbar.Item renderAs={Link} to="/app/projects">
-                    Projects
-                  </Navbar.Item>
-                </Navbar.Dropdown>
+              <Navbar.Item renderAs={Link} to="/app/grants">
+                Grants
+              </Navbar.Item>
+              <Navbar.Item renderAs={Link} to="/app/funders">
+                Funders
+              </Navbar.Item>
+              <Navbar.Item renderAs={Link} to="/app/contacts">
+                Contacts
+              </Navbar.Item>
+              <Navbar.Item renderAs={Link} to="/app/reports">
+                Reports
+              </Navbar.Item>
+              <Navbar.Item renderAs={Link} to="/app/projects">
+                Projects
               </Navbar.Item>
             </Navbar.Container>
           ) : null}
           <Navbar.Container position="end">
             {currentUser ? (
-              <Navbar.Item renderAs="a" href="javascript:void(0)" role="button">
-                Sign Out
-              </Navbar.Item>
+              <Fragment>
+                <hr className="is-marginless is-hidden-desktop" />
+                <Navbar.Item
+                  renderAs="a"
+                  href="javascript:void(0)"
+                  role="button"
+                >
+                  Sign Out
+                </Navbar.Item>
+              </Fragment>
             ) : (
               <Fragment>
                 <Navbar.Item renderAs={Link} to="/signin">
