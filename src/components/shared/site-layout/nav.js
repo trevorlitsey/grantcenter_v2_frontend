@@ -22,7 +22,7 @@ class Nav extends React.PureComponent {
 
   componentDidUpdate = prevProps => {
     if (this.props.location.pathname !== prevProps.location.pathname) {
-      this.setState({ open: !this.state.open });
+      this.setState({ open: false });
     }
   };
 
