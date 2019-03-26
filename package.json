@@ -36,7 +36,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -47,6 +48,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-react-hooks": "^1.5.0",
+    "jest": "^24.5.0",
     "prettier": "^1.14.2"
   },
   "repository": {

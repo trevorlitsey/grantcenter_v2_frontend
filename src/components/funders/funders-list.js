@@ -2,23 +2,7 @@ import React, { PureComponent } from 'react';
 import { arrayOf, shape, string, number } from 'prop-types';
 
 import List from '../shared/list';
-
-const KEYS = [
-  {
-    title: 'Name',
-    key: 'name',
-    to: '/app/funder/',
-    id: 'id',
-  },
-  {
-    title: 'Mission Focus',
-    key: 'missionFocus',
-  },
-  {
-    title: 'Annual Giving',
-    key: 'annualGiving',
-  },
-];
+import Item from '../shared/item';
 
 class FundersList extends PureComponent {
   static propTypes = {
@@ -51,7 +35,13 @@ class FundersList extends PureComponent {
       annualGiving: '$' + funder.annualGiving.toLocaleString(),
     }));
 
-    return <List items={formattedFunders} keys={KEYS} />;
+    return (
+      <List items={formattedFunders}>
+        <Item title="Name" source="name" to="/app/funder/{id}" />
+        <Item title="Mission Focus" source="missionFocus" />
+        <Item title="Annual Giving" source="annualGiving" />
+      </List>
+    );
   }
 }
 
