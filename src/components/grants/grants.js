@@ -10,7 +10,7 @@ const breadcrumbs = [
   },
   {
     name: 'Grants',
-    url: '/grants',
+    url: '/app/grants',
     active: true,
   },
 ];

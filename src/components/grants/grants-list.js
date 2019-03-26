@@ -13,7 +13,7 @@ class GrantsList extends PureComponent {
           id: string.isRequired,
           name: string.isRequired,
         }).isRequired,
-        amount: number.isRequired,
+        requestAmount: number.isRequired,
       })
     ).isRequired,
   };
@@ -42,8 +42,12 @@ class GrantsList extends PureComponent {
 
     return (
       <List items={formattedGrants}>
-        <Item title="Name" source="name" to="app/grant/{id}" itemId="id" />
-        <Item title="Funder" source="funder.name" to="app/funder/{funder.id}" />
+        <Item title="Name" source="name" to="/app/grant/{id}" itemId="id" />
+        <Item
+          title="Funder"
+          source="funder.name"
+          to="/app/funder/{funder.id}"
+        />
         <Item title="Request Amount" source="requestAmount" />
       </List>
     );

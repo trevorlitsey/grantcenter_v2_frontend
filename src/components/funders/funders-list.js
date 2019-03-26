@@ -6,7 +6,7 @@ import Item from '../shared/item';
 
 class FundersList extends PureComponent {
   static propTypes = {
-    grants: arrayOf(
+    funders: arrayOf(
       shape({
         id: string.isRequired,
         name: string.isRequired,

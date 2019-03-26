@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
+
 import Content from 'react-bulma-components/lib/components/content';
 import Section from 'react-bulma-components/lib/components/section';
 import Button from 'react-bulma-components/lib/components/button';
 import Heading from 'react-bulma-components/lib/components/heading';
+
+import Link from '../shared/link';
 
 import { extraLarge } from '../../styles/spacing';
 

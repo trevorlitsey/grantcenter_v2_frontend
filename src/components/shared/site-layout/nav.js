@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { object } from 'prop-types';
-import { Link } from 'gatsby';
 import { Location } from '@reach/router';
 import Navbar from 'react-bulma-components/lib/components/navbar';
 
+import Link from '../link';
 import Logo from './logo';
 
 class Nav extends React.PureComponent {

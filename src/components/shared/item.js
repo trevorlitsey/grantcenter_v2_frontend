@@ -15,17 +15,19 @@ class Item extends PureComponent {
   };
 
   render() {
-    const { item, source, to } = this.props;
+    const { href, item, source, to } = this.props;
 
     const value = getNestedKey(source, item);
 
-    if (to) {
-      const url = substituteString(to, item);
-
+    if (to || href) {
       return (
         <td key={source}>
           <strong>
-            <Link to={url}>{value}</Link>
+            {to ? (
+              <Link to={substituteString(to, item)}>{value}</Link>
+            ) : (
+              <a href={substituteString(href, item)}>{value}</a>
+            )}
           </strong>
         </td>
       );

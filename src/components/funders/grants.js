@@ -9,7 +9,7 @@ import { formatDate, formatDollarAmount } from '../../helpers';
 import { grants } from '../../data';
 
 const GrantCard = ({ dueDate, id, name, requestAmount }) => (
-  <MediaCard title={name} viewLink={`/app/grant/${id}`}>
+  <MediaCard title={name} to={`/app/grant/${id}`}>
     <strong>Due Date:</strong> {formatDate(dueDate)}
     <br />
     <strong>Request Amount:</strong> {formatDollarAmount(requestAmount)}

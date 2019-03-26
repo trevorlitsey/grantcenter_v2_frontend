@@ -5,7 +5,11 @@ export const contact = {
   tags: ['spirited', 'new works'],
   relationships: [
     {
-      funder: 'Gatsby Foundation',
+      id: '123',
+      funder: {
+        id: '456',
+        name: 'Gatsby Foundation',
+      },
       title: 'CEO',
     },
   ],

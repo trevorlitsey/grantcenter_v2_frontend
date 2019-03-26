@@ -1,14 +1,13 @@
 import React, { PureComponent } from 'react';
-import { arrayOf, shape } from 'prop-types';
+import { arrayOf, shape, string } from 'prop-types';
 
 import CardList from './card-list';
 import MediaCard from './media-card';
 
-import { Contact } from '../../config/prop-types';
 import { contacts } from '../../data/contacts';
 
 const ContactCard = ({ id, name, email, phone }) => (
-  <MediaCard title={name} viewLink={`/app/contact/${id}`}>
+  <MediaCard title={name} to={`/app/contact/${id}`}>
     <strong>Email:</strong> <a href={`mailto:${email}`}>{email}</a>
     <br />
     <strong>Phone:</strong> {phone}
@@ -17,7 +16,27 @@ const ContactCard = ({ id, name, email, phone }) => (
 
 class Contacts extends PureComponent {
   static propTypes = {
-    contacts: arrayOf(shape(Contact)),
+    contacts: arrayOf(
+      shape({
+        id: string.isRequired,
+        name: string.isRequired,
+        location: string,
+        tags: arrayOf(string),
+        relationships: arrayOf(
+          shape({
+            id: string.isRequired,
+            funder: shape({
+              id: string.isRequired,
+              name: string.isRequired,
+            }),
+            title: string.isRequired,
+          })
+        ).isRequired,
+        phone: string,
+        email: string,
+        notes: string,
+      })
+    ),
   };
 
   static defaultProps = {

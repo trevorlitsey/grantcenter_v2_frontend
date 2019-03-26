@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react';
 import { arrayOf, bool, node, oneOfType, shape, string } from 'prop-types';
-import { Link } from 'gatsby';
 
 import Breadcrumb from 'react-bulma-components/lib/components/breadcrumb';
 import Container from 'react-bulma-components/lib/components/container';
 import Heading from 'react-bulma-components/lib/components/heading';
 import Section from 'react-bulma-components/lib/components/section';
+
+import Link from '../shared/link';
 
 class AppLayout extends PureComponent {
   static propTypes = {
