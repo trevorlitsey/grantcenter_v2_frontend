@@ -1,4 +1,4 @@
-import { substituteString } from './string';
+const { substituteString } = require('./string');
 
 describe('substituteString', () => {
   it('should substitute variables in string with keys from provided object', () => {
