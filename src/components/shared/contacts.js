@@ -8,9 +8,10 @@ import { contacts } from '../../data/contacts';
 
 const ContactCard = ({ id, name, email, phone }) => (
   <MediaCard title={name} to={`/app/contact/${id}`}>
-    <strong>Email:</strong> <a href={`mailto:${email}`}>{email}</a>
+    <strong>Email:</strong>{' '}
+    {email ? <a href={`mailto:${email}`}>{email}</a> : <i>unknown</i>}
     <br />
-    <strong>Phone:</strong> {phone}
+    <strong>Phone:</strong> {phone || <i>unknown</i>}
   </MediaCard>
 );
 
@@ -20,21 +21,8 @@ class Contacts extends PureComponent {
       shape({
         id: string.isRequired,
         name: string.isRequired,
-        location: string,
-        tags: arrayOf(string),
-        relationships: arrayOf(
-          shape({
-            id: string.isRequired,
-            funder: shape({
-              id: string.isRequired,
-              name: string.isRequired,
-            }),
-            title: string.isRequired,
-          })
-        ).isRequired,
         phone: string,
         email: string,
-        notes: string,
       })
     ),
   };

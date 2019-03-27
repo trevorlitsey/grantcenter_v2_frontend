@@ -42,7 +42,7 @@ class GrantsList extends PureComponent {
 
     return (
       <List items={formattedGrants}>
-        <Item title="Name" source="name" to="/app/grant/{id}" itemId="id" />
+        <Item title="Name" source="name" to="/app/grant/{id}" />
         <Item
           title="Funder"
           source="funder.name"

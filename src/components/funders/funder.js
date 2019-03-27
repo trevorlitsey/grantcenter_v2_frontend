@@ -2,12 +2,13 @@ import React, { PureComponent } from 'react';
 import { number, shape, string } from 'prop-types';
 
 import AppLayout from '../shared/app-layout';
+import Contacts from '../shared/contacts';
+import GoogleMapsLink from '../shared/google-maps-link';
+import Grants from '../shared/grants';
 import Notes from '../shared/notes';
 import Tags from '../shared/tags';
-import Contacts from '../shared/contacts';
 
 import FunderHeader from './funder-header';
-import Grants from './grants';
 
 import { contacts } from '../../data/contacts';
 
@@ -58,12 +59,9 @@ class SingleFunderPage extends PureComponent {
       <AppLayout
         title={funder.name}
         subtitle={
-          <a
-            href={`https://maps.google.com/?q=${funder.location}`}
-            target="_blank"
-          >
+          <GoogleMapsLink address={funder.location}>
             {funder.location}
-          </a>
+          </GoogleMapsLink>
         }
         breadcrumbs={breadcrumbs}
       >

@@ -23,8 +23,8 @@ class GrantProject extends PureComponent {
     return (
       <Control>
         <Tag.Group gapless>
-          <Tag color="dark">Project</Tag>
           <Link to={`/app/project/${project.id}`}>
+            <Tag color="dark">Project</Tag>
             <Tag color="light">{project.name}</Tag>
           </Link>
         </Tag.Group>
