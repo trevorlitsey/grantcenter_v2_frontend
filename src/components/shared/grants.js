@@ -24,7 +24,6 @@ class Grants extends PureComponent {
         name: string.isRequired,
         dueDate: string.isRequired,
         requestAmount: number.isRequired,
-        notes: string,
       })
     ),
   };

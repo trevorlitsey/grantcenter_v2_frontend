@@ -6,7 +6,7 @@ import { Field } from 'react-bulma-components/lib/components/form';
 import ProjectTag from '../shared/project-tag';
 import SectionWithTitle from '../shared/section-with-title';
 
-import ReportStatus from './report-status';
+import ReportStatus from '../shared/report-status';
 
 import { ReportStatuses } from '../../constants';
 

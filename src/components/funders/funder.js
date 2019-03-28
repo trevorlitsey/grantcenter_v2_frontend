@@ -7,6 +7,7 @@ import GoogleMapsLink from '../shared/google-maps-link';
 import Grants from '../shared/grants';
 import Notes from '../shared/notes';
 import Tags from '../shared/tags';
+import Reports from '../shared/reports';
 
 import FunderHeader from './funder-header';
 
@@ -66,6 +67,7 @@ class SingleFunderPage extends PureComponent {
         <Notes notes={funder.notes} />
         <Tags tags={funder.tags} />
         <Grants grants={funder.grants} />
+        <Reports reports={funder.reports} />
         <Contacts contacts={funder.contacts} />
       </AppLayout>
     );

@@ -1,4 +1,5 @@
 import { contacts } from './contacts';
+import { reports } from './reports';
 
 export const funder = {
   id: '123',
@@ -12,6 +13,7 @@ export const funder = {
   tags: ['tag1', 'tag2'],
   notes: 'Some funder notes',
   contacts,
+  reports,
 };
 
 export const funders = [funder];

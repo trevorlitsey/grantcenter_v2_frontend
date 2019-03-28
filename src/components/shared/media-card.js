@@ -16,7 +16,7 @@ class MediaCard extends PureComponent {
   };
 
   render() {
-    const { children, title, to } = this.props;
+    const { children, title, subtitle, to } = this.props;
 
     return (
       <Card>
@@ -26,6 +26,11 @@ class MediaCard extends PureComponent {
               <Heading size={4} renderAs="h3">
                 <Link to={to}>{title}</Link>
               </Heading>
+              {subtitle && (
+                <Heading subtitle size={5}>
+                  {subtitle}
+                </Heading>
+              )}
             </Media.Item>
           </Media>
           <Content>{children}</Content>

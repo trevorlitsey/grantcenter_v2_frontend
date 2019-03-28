@@ -3,11 +3,13 @@ import { number, shape, string } from 'prop-types';
 import { Link } from 'gatsby';
 
 import AppLayout from '../shared/app-layout';
+import Contacts from '../shared/contacts';
+import Notes from '../shared/notes';
+import Reports from '../shared/reports';
+import Tags from '../shared/tags';
+
 import GrantHeader from './grant-header';
 import GrantInfo from './grant-info';
-import Notes from '../shared/notes';
-import Tags from '../shared/tags';
-import Contacts from '../shared/contacts';
 
 const breadcrumbs = [
   {
@@ -86,6 +88,7 @@ class SingleGrantPage extends PureComponent {
         />
         <Notes notes={grant.notes} />
         <Tags tags={grant.tags} />
+        <Reports reports={grant.reports} />
         <Contacts contacts={grant.contacts} />
       </AppLayout>
     );
