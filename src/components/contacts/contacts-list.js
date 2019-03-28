@@ -4,6 +4,8 @@ import { arrayOf, shape, string } from 'prop-types';
 import List from '../shared/list';
 import Item from '../shared/item';
 
+import { contacts } from '../../../seed';
+
 class ContactsList extends PureComponent {
   static propTypes = {
     contacts: arrayOf(
@@ -17,14 +19,7 @@ class ContactsList extends PureComponent {
   };
 
   static defaultProps = {
-    contacts: [
-      {
-        id: '123',
-        name: 'Larry Bird',
-        email: 'larry@bird.com',
-        phone: '123-456-7890',
-      },
-    ],
+    contacts,
   };
 
   render() {

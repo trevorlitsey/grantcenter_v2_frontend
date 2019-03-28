@@ -14,11 +14,6 @@ class FunderHeader extends PureComponent {
     missionFocus: string,
   };
 
-  static defaultProps = {
-    annualGiving: 1000000,
-    missionFocus: 'Arts and Education',
-  };
-
   render() {
     const { annualGiving, missionFocus } = this.props;
 

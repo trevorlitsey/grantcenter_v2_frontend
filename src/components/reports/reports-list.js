@@ -6,6 +6,8 @@ import Item from '../shared/item';
 
 import { formatDate } from '../../helpers';
 
+import { reports } from '../../../seed';
+
 class ReportsList extends PureComponent {
   static propTypes = {
     reports: arrayOf(
@@ -22,17 +24,7 @@ class ReportsList extends PureComponent {
   };
 
   static defaultProps = {
-    reports: [
-      {
-        id: '123',
-        name: 'Final Report',
-        dueDate: '2019-10-01',
-        grant: {
-          id: '123',
-          name: 'Ford Foundation',
-        },
-      },
-    ],
+    reports,
   };
 
   render() {

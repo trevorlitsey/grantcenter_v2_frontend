@@ -7,6 +7,8 @@ import Tags from '../shared/tags';
 import Relationships from '../shared/relationships';
 import ContactInfo from './contact-info';
 
+import { contact } from '../../../seed';
+
 const breadcrumbs = [
   {
     name: 'App',
@@ -47,25 +49,7 @@ class SingleContactPage extends PureComponent {
   };
 
   static defaultProps = {
-    contact: {
-      id: '123',
-      name: 'Larry Bird',
-      location: '456 14th St, Minneapolis, MN 55407',
-      tags: ['tag1', 'tag2'],
-      relationships: [
-        {
-          id: '123',
-          funder: {
-            id: '456',
-            name: 'Ford Foundation',
-          },
-          title: 'Board President',
-        },
-      ],
-      phone: '123-456-7890',
-      email: 'larry@bird.com',
-      notes: 'Some contact notes',
-    },
+    contact,
   };
 
   render() {

@@ -4,7 +4,7 @@ import { arrayOf, shape, string } from 'prop-types';
 import CardList from './card-list';
 import MediaCard from './media-card';
 
-import { contacts } from '../../data/contacts';
+import { contacts } from '../../../seed/contacts';
 
 const ContactCard = ({ id, name, email, phone }) => (
   <MediaCard title={name} to={`/app/contact/${id}`}>

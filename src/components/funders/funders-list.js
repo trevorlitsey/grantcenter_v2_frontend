@@ -4,6 +4,8 @@ import { arrayOf, shape, string, number } from 'prop-types';
 import List from '../shared/list';
 import Item from '../shared/item';
 
+import { funders } from '../../../seed';
+
 class FundersList extends PureComponent {
   static propTypes = {
     funders: arrayOf(
@@ -17,14 +19,7 @@ class FundersList extends PureComponent {
   };
 
   static defaultProps = {
-    funders: [
-      {
-        id: '123',
-        name: 'Ford Foundation',
-        missionFocus: 'Arts and Education',
-        annualGiving: 10000,
-      },
-    ],
+    funders,
   };
 
   render() {

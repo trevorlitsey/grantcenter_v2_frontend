@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { number, shape, string } from 'prop-types';
+import { number, shape, string, arrayOf } from 'prop-types';
 
 import AppLayout from '../shared/app-layout';
 import Contacts from '../shared/contacts';
@@ -10,7 +10,7 @@ import Tags from '../shared/tags';
 
 import FunderHeader from './funder-header';
 
-import { contacts } from '../../data/contacts';
+import { funder } from '../../../seed';
 
 const breadcrumbs = [
   {
@@ -33,23 +33,17 @@ class SingleFunderPage extends PureComponent {
     grant: shape({
       id: string.isRequired,
       name: string.isRequired,
-      location: string,
+      location: shape({
+        address: string.isRequired,
+        coordinates: arrayOf(number).isRequired,
+      }),
       missionFocus: string,
       annualGiving: number,
     }),
   };
 
   static defaultProps = {
-    funder: {
-      id: '123',
-      name: 'Ford Foundation',
-      missionFocus: 'Arts and Education',
-      annualGiving: 10000,
-      location: '123 Main St, Minneapolis, MN 55408',
-      tags: ['tag1', 'tag2'],
-      notes: 'Some funder notes',
-      contacts,
-    },
+    funder,
   };
 
   render() {
@@ -59,8 +53,8 @@ class SingleFunderPage extends PureComponent {
       <AppLayout
         title={funder.name}
         subtitle={
-          <GoogleMapsLink address={funder.location}>
-            {funder.location}
+          <GoogleMapsLink location={funder.location}>
+            {funder.location.address}
           </GoogleMapsLink>
         }
         breadcrumbs={breadcrumbs}

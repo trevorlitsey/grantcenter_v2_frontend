@@ -6,6 +6,8 @@ import Item from '../shared/item';
 
 import { formatDate } from '../../helpers';
 
+import { projects } from '../../../seed';
+
 class ProjectsList extends PureComponent {
   static propTypes = {
     projects: arrayOf(
@@ -20,15 +22,7 @@ class ProjectsList extends PureComponent {
   };
 
   static defaultProps = {
-    projects: [
-      {
-        id: '123',
-        name: 'Summer Education Workshops 2019',
-        startDate: '2019-06-01',
-        endDate: '2019-08-31',
-        budget: 15000,
-      },
-    ],
+    projects,
   };
 
   render() {

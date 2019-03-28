@@ -6,7 +6,7 @@ import MediaCard from '../shared/media-card';
 
 import { formatDate, formatDollarAmount } from '../../helpers';
 
-import { grants } from '../../data';
+import { grants } from '../../../seed';
 
 const GrantCard = ({ dueDate, id, name, requestAmount }) => (
   <MediaCard title={name} to={`/app/grant/${id}`}>

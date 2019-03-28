@@ -11,6 +11,8 @@ import ReportInfo from './report-info';
 
 import { ReportStatuses } from '../../constants';
 
+import { report } from '../../../seed';
+
 const breadcrumbs = [
   {
     name: 'App',
@@ -54,27 +56,7 @@ class SingleReportPage extends PureComponent {
   };
 
   static defaultProps = {
-    report: {
-      id: '123',
-      dueDate: '2019-10-01',
-      name: 'Final Report',
-      grant: {
-        id: '123',
-        name: '2018 Education Fund',
-        requestAmount: 10000,
-        awardAmount: 8000,
-        funder: {
-          id: '123',
-          name: 'Ford Foundation',
-        },
-        project: {
-          id: '123',
-          name: 'Education Fund Summer 2018',
-        },
-      },
-      status: 'DRAFT',
-      tags: ['tag1', 'tag2'],
-    },
+    report,
   };
 
   render() {
