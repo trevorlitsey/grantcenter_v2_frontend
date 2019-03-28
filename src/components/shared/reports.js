@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { arrayOf, number, shape, string } from 'prop-types';
+import { arrayOf, shape, string } from 'prop-types';
 
 import CardList from '../shared/card-list';
 import MediaCard from '../shared/media-card';
@@ -28,7 +28,7 @@ class Reports extends PureComponent {
         id: string.isRequired,
         name: string.isRequired,
         dueDate: string.isRequired,
-        status: number.isRequired,
+        status: string.isRequired,
       })
     ),
   };
