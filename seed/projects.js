@@ -1,3 +1,5 @@
+import { reports } from './reports';
+
 export const project = {
   id: '123',
   name: 'Summer Education Workshops 2019',
@@ -33,6 +35,7 @@ export const project = {
       name: 'Larry Bird',
     },
   ],
+  reports,
 };
 
 export const projects = [project];

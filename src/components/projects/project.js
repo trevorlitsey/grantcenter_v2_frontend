@@ -3,6 +3,7 @@ import { arrayOf, number, shape, string } from 'prop-types';
 
 import AppLayout from '../shared/app-layout';
 import Contacts from '../shared/contacts';
+import Reports from '../shared/reports';
 import Grants from '../shared/grants';
 import Notes from '../shared/notes';
 import Tags from '../shared/tags';
@@ -90,8 +91,9 @@ class SingleProjectPage extends PureComponent {
         <Notes notes={project.notes} />
         <Tags tags={project.tags} />
         <Grants grants={project.grants} />
-        <Contacts contacts={project.contacts} />
+        <Reports reports={project.reports} />
         <Funders funders={project.funders} />
+        <Contacts contacts={project.contacts} />
       </AppLayout>
     );
   }
