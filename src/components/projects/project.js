@@ -28,9 +28,9 @@ const breadcrumbs = [
   },
 ];
 
-class SingleContactPage extends PureComponent {
+class SingleProjectPage extends PureComponent {
   static propType = {
-    contact: shape({
+    project: shape({
       id: string.isRequired,
       name: string.isRequired,
       startDate: string,
@@ -130,4 +130,4 @@ class SingleContactPage extends PureComponent {
   }
 }
 
-export default SingleContactPage;
+export default SingleProjectPage;

@@ -22,12 +22,12 @@ class ProjectProject extends PureComponent {
 
     return (
       <Control>
-        <Tag.Group gapless>
-          <GoogleMapsLink location={location}>
+        <GoogleMapsLink location={location}>
+          <Tag.Group gapless>
             <Tag color="dark">Location</Tag>
             <Tag color="light">{location.address}</Tag>
-          </GoogleMapsLink>
-        </Tag.Group>
+          </Tag.Group>
+        </GoogleMapsLink>
       </Control>
     );
   }

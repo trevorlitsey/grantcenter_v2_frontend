@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import Tag from 'react-bulma-components/lib/components/tag';
 import { Control } from 'react-bulma-components/lib/components/form';
 
-class GrantProject extends PureComponent {
+class ProjectTag extends PureComponent {
   static propTypes = {
     project: shape({
       id: string.isRequired,
@@ -22,15 +22,15 @@ class GrantProject extends PureComponent {
 
     return (
       <Control>
-        <Tag.Group gapless>
-          <Link to={`/app/project/${project.id}`}>
+        <Link to={`/app/project/${project.id}`}>
+          <Tag.Group gapless>
             <Tag color="dark">Project</Tag>
             <Tag color="light">{project.name}</Tag>
-          </Link>
-        </Tag.Group>
+          </Tag.Group>
+        </Link>
       </Control>
     );
   }
 }
 
-export default GrantProject;
+export default ProjectTag;

@@ -1,31 +1,31 @@
 import React, { PureComponent } from 'react';
-import { bool, shape, string } from 'prop-types';
+import { oneOf, shape, string } from 'prop-types';
 
 import { Field } from 'react-bulma-components/lib/components/form';
 
-import SectionWithTitle from '../shared/section-with-title';
-import GrantStatus from './grant-status';
-import GrantIsRolling from './grant-is-rolling';
 import ProjectTag from '../shared/project-tag';
+import SectionWithTitle from '../shared/section-with-title';
 
-class GrantInfo extends PureComponent {
+import ReportStatus from './report-status';
+
+import { ReportStatuses } from '../../constants';
+
+class ReportInfo extends PureComponent {
   static propTypes = {
-    isRolling: bool,
-    status: string.isRequired,
     project: shape({
       id: string.isRequired,
       name: string.isRequired,
     }),
+    status: oneOf(Object.values(ReportStatuses)),
   };
 
   render() {
-    const { isRolling, status, project } = this.props;
+    const { project, status } = this.props;
 
     return (
       <SectionWithTitle>
         <Field multiline kind="group">
-          <GrantStatus status={status} />
-          <GrantIsRolling isRolling={isRolling} />
+          <ReportStatus status={status} />
           <ProjectTag project={project} />
         </Field>
       </SectionWithTitle>
@@ -33,4 +33,4 @@ class GrantInfo extends PureComponent {
   }
 }
 
-export default GrantInfo;
+export default ReportInfo;
