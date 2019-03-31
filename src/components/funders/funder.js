@@ -3,6 +3,7 @@ import { number, shape, string, arrayOf } from 'prop-types';
 
 import AppLayout from '../shared/app-layout';
 import Contacts from '../shared/contacts';
+import EditLink from '../shared/edit-link';
 import GoogleMapsLink from '../shared/google-maps-link';
 import Grants from '../shared/grants';
 import Notes from '../shared/notes';
@@ -53,6 +54,7 @@ class SingleFunderPage extends PureComponent {
     return (
       <AppLayout
         title={funder.name}
+        callToAction={<EditLink to={'/app/funder/123/edit'} />}
         subtitle={
           <GoogleMapsLink location={funder.location}>
             {funder.location.address}

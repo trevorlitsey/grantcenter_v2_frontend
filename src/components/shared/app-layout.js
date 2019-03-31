@@ -10,6 +10,7 @@ import Link from '../shared/link';
 
 class AppLayout extends PureComponent {
   static propTypes = {
+    callToAction: node,
     breadcrumbs: arrayOf(
       shape({ name: string.isRequired, url: string.isRequired, active: bool })
         .isRequired
@@ -38,7 +39,7 @@ class AppLayout extends PureComponent {
   };
 
   render() {
-    const { breadcrumbs, children, title, subtitle } = this.props;
+    const { callToAction, breadcrumbs, children, title, subtitle } = this.props;
 
     return (
       <Section>
@@ -52,6 +53,9 @@ class AppLayout extends PureComponent {
               hrefAttr="to"
               renderAs={Link}
             />
+          )}
+          {callToAction && (
+            <span className="is-pulled-right">{callToAction}</span>
           )}
           <Heading size={3}>{title}</Heading>
           <Heading size={4} subtitle renderAs="p">

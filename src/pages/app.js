@@ -3,7 +3,7 @@ import { Router } from '@reach/router';
 
 import SiteLayout from '../components/shared/site-layout';
 import { Contact, Contacts } from '../components/contacts';
-import { Funder, Funders } from '../components/funders';
+import { EditFunder, Funder, Funders } from '../components/funders';
 import { Grant, Grants } from '../components/grants';
 import { Project, Projects } from '../components/projects';
 import { Report, Reports } from '../components/reports';
@@ -18,6 +18,7 @@ export default () => (
       <Contact path="/app/contact/:id" />
       <Contacts path="/app/contacts" />
 
+      <EditFunder path="/app/funder/:id/edit" />
       <Funder path="/app/funder/:id" />
       <Funders path="/app/funders" />
 
