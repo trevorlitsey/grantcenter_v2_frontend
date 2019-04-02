@@ -27,7 +27,11 @@ const breadcrumbs = [
 class EditFunder extends PureComponent {
   render() {
     return (
-      <AppLayout breadcrumbs={breadcrumbs} title="Edit Funder">
+      <AppLayout
+        breadcrumbs={breadcrumbs}
+        title="Edit Funder"
+        subtitle="Ford Foundation"
+      >
         <FunderForm />
       </AppLayout>
     );
