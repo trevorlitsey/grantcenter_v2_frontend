@@ -2,15 +2,15 @@ import React, { PureComponent } from 'react';
 import { node, string } from 'prop-types';
 
 import {
-  Field,
   Control,
+  Field,
   Label,
 } from 'react-bulma-components/lib/components/form';
 
 class FormControl extends PureComponent {
   static propTypes = {
-    label: string.isRequired,
     children: node.isRequired,
+    label: string.isRequired,
   };
 
   render() {

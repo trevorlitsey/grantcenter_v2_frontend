@@ -4,9 +4,11 @@
   "version": "0.0.0",
   "author": "Trevor Litsey <trevorlitsey@gmail.com>",
   "dependencies": {
+    "@mikaelkristiansson/domready": "^1.0.9",
     "bulma": "^0.7.4",
     "classnames": "^2.2.6",
     "date-fns": "^1.30.1",
+    "formik": "^1.5.2",
     "gatsby": "^2.2.12",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-google-analytics": "^2.0.17",
@@ -24,8 +26,10 @@
     "react": "^16.8.5",
     "react-bulma-components": "^2.3.0",
     "react-dom": "^16.8.5",
+    "react-google-autocomplete": "^1.0.18",
     "react-helmet": "^5.2.0",
-    "react-icons": "^3.5.0"
+    "react-icons": "^3.5.0",
+    "yup": "^0.27.0"
   },
   "keywords": [
     "grantcenter"
