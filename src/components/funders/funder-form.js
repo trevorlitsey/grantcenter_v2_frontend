@@ -87,7 +87,7 @@ class FunderForm extends PureComponent {
                 />
               </FormControl>
               <FormControl label="Average Annual Giving:">
-                <Input
+                <Input.Dollar
                   onBlur={handleBlur}
                   onChange={handleChange}
                   name="annualGiving"

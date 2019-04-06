@@ -1,12 +1,13 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { string, bool } from 'prop-types';
 import {
-  Help,
   Input as BulmaInput,
   Textarea,
 } from 'react-bulma-components/lib/components/form';
 
 import AddressInput from './address';
+import DollarInput from './dollar';
+import InputWrapper from './input-wrapper';
 
 class Input extends PureComponent {
   static propTypes = {
@@ -17,18 +18,16 @@ class Input extends PureComponent {
   render() {
     const { error, touched, ...props } = this.props;
 
-    const errorState = error && touched;
-
     return (
-      <Fragment>
-        <BulmaInput color={errorState ? 'danger' : ''} {...props} />
-        {error && touched && <Help color="danger">{error}</Help>}
-      </Fragment>
+      <InputWrapper error={error} touched={touched}>
+        <BulmaInput color={error && touched ? 'danger' : ''} {...props} />
+      </InputWrapper>
     );
   }
 }
 
 Input.Address = AddressInput;
+Input.Dollar = DollarInput;
 Input.Textarea = Textarea;
 
 export default Input;
