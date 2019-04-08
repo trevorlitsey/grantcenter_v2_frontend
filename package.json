@@ -34,7 +34,7 @@
   "keywords": [
     "grantcenter"
   ],
-  "license": "MIT",
+  "license": "NONE",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -58,6 +58,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/amandeepmittal/gatsby-bulma-quickstart"
+    "url": "https://github.com/trevorlitsey/grantcenter_v2_frontend"
   }
 }
