@@ -1,4 +1,4 @@
-import FormControl from './form-control';
+import Form from './form';
 import Input from './input';
 
-export { FormControl, Input };
+export { Form, Input };

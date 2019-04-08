@@ -58,9 +58,11 @@ class AppLayout extends PureComponent {
             <span className="is-pulled-right">{callToAction}</span>
           )}
           <Heading size={3}>{title}</Heading>
-          <Heading size={4} subtitle renderAs="p">
-            {subtitle}
-          </Heading>
+          {subtitle ? (
+            <Heading size={4} subtitle renderAs="p">
+              {subtitle}
+            </Heading>
+          ) : null}
           {children}
         </Container>
       </Section>

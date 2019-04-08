@@ -1,5 +1,6 @@
+import CreateFunder from './create-funder';
 import EditFunder from './edit-funder';
 import Funder from './funder';
 import Funders from './funders';
 
-export { EditFunder, Funder, Funders };
+export { CreateFunder, EditFunder, Funder, Funders };
