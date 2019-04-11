@@ -16,11 +16,19 @@ class Input extends PureComponent {
   };
 
   render() {
-    const { error, touched, ...props } = this.props;
+    const { error, touched, type, ...props } = this.props;
+
+    const styles = {
+      width: type === 'date' ? 'auto' : undefined,
+    };
 
     return (
       <InputWrapper error={error} touched={touched}>
-        <BulmaInput color={error && touched ? 'danger' : ''} {...props} />
+        <BulmaInput
+          color={error && touched ? 'danger' : null}
+          style={styles}
+          {...props}
+        />
       </InputWrapper>
     );
   }

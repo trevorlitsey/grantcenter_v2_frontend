@@ -53,14 +53,14 @@ class SingleFunderPage extends PureComponent {
 
     return (
       <AppLayout
-        title={funder.name}
+        breadcrumbs={breadcrumbs}
         callToAction={<CTAButton.Edit to={'/app/funder/123/edit'} />}
+        title={funder.name}
         subtitle={
           <GoogleMapsLink location={funder.location}>
             {funder.location.address}
           </GoogleMapsLink>
         }
-        breadcrumbs={breadcrumbs}
       >
         <FunderHeader
           annualGiving={funder.annualGiving}

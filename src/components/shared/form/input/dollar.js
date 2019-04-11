@@ -14,7 +14,7 @@ class Dollar extends PureComponent {
   };
 
   render() {
-    const { error, touched, ...props } = this.props;
+    const { error, touched, value, ...props } = this.props;
 
     return (
       <InputWrapper error={error} touched={touched}>
@@ -23,7 +23,11 @@ class Dollar extends PureComponent {
             <Button isStatic>$</Button>
           </Control>
           <Control>
-            <Input color={error && touched ? 'danger' : ''} {...props} />
+            <Input
+              color={error && touched ? 'danger' : null}
+              value={value ? String(value) : undefined}
+              {...props}
+            />
           </Control>
         </Field>
       </InputWrapper>

@@ -5,33 +5,36 @@ import { Form, Input } from '../shared/form';
 
 const initialValues = {
   name: '',
-  missionFocus: '',
+  startDate: '',
+  endDate: '',
+  budget: undefined,
   location: {
     address: '',
     coordinates: [],
   },
-  annualGiving: undefined,
   tags: '',
   notes: '',
 };
 
 const validationSchema = Yup.object().shape({
-  name: Yup.string().required('Please input a funder name.'),
-  missionFocus: Yup.string(),
+  name: Yup.string().required('Please input a project name.'),
+  startDate: Yup.string(),
+  endDate: Yup.string(),
+  budget: Yup.number(),
   location: Yup.object().shape({
     address: Yup.string(),
     coordinates: Yup.array(Yup.string()),
   }),
-  annualGiving: Yup.number(),
   tags: Yup.string(),
   notes: Yup.string(),
 });
 
-class FunderForm extends PureComponent {
+class ProjectForm extends PureComponent {
   handleSubmit = (values, { setSubmitting }) => {
     // TODO
     setTimeout(() => {
       setSubmitting(false);
+      console.log({ values });
     }, 1000);
   };
 
@@ -55,13 +58,34 @@ class FunderForm extends PureComponent {
                 value={values.name}
               />
             </Form.Control>
-            <Form.Control label="Mission Focus:">
+            <Form.Control label="Start Date:">
               <Input
+                type="date"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                name="missionFocus"
-                placeholder="Social Justice, Diversity"
-                value={values.missionFocus}
+                name="startDate"
+                placeholder="Start Date"
+                value={values.startDate}
+              />
+            </Form.Control>
+            <Form.Control label="End Date:">
+              <Input
+                type="date"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                name="endDate"
+                placeholder="End Date"
+                value={values.endDate}
+              />
+            </Form.Control>
+            <Form.Control label="Budget:">
+              <Input.Dollar
+                onBlur={handleBlur}
+                onChange={handleChange}
+                name="budget"
+                placeholder="10,000"
+                type="number"
+                value={values.budget}
               />
             </Form.Control>
             <Form.Control label="Address:">
@@ -72,16 +96,6 @@ class FunderForm extends PureComponent {
                 name="address"
                 placeholder="320 E 43rd St, New York, NY 10017"
                 value={values.location.address}
-              />
-            </Form.Control>
-            <Form.Control label="Average Annual Giving:">
-              <Input.Dollar
-                onBlur={handleBlur}
-                onChange={handleChange}
-                name="annualGiving"
-                placeholder="127,865,430"
-                type="number"
-                value={values.annualGiving}
               />
             </Form.Control>
             <Form.Control label="Tags:">
@@ -109,4 +123,4 @@ class FunderForm extends PureComponent {
   }
 }
 
-export default FunderForm;
+export default ProjectForm;
