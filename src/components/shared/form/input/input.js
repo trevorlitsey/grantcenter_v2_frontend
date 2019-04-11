@@ -27,6 +27,7 @@ class Input extends PureComponent {
         <BulmaInput
           color={error && touched ? 'danger' : null}
           style={styles}
+          type={type}
           {...props}
         />
       </InputWrapper>
