@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 
 import AppLayout from '../shared/app-layout';
+import CTAButton from '../shared/cta-button';
+
 import ProjectsList from './projects-list';
 
 const breadcrumbs = [
@@ -18,7 +20,11 @@ const breadcrumbs = [
 class ProjectsPage extends PureComponent {
   render() {
     return (
-      <AppLayout title="Projects" breadcrumbs={breadcrumbs}>
+      <AppLayout
+        breadcrumbs={breadcrumbs}
+        callToAction={<CTAButton.Create to="/app/project/create" />}
+        title="Projects"
+      >
         <ProjectsList />
       </AppLayout>
     );

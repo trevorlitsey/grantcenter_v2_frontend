@@ -3,9 +3,10 @@ import { arrayOf, number, shape, string } from 'prop-types';
 
 import AppLayout from '../shared/app-layout';
 import Contacts from '../shared/contacts';
-import Reports from '../shared/reports';
+import CTAButton from '../shared/cta-button';
 import Grants from '../shared/grants';
 import Notes from '../shared/notes';
+import Reports from '../shared/reports';
 import Tags from '../shared/tags';
 
 import Funders from './funders';
@@ -79,13 +80,14 @@ class SingleProjectPage extends PureComponent {
 
     return (
       <AppLayout
-        title={project.name}
+        breadcrumbs={breadcrumbs}
+        callToAction={<CTAButton.Edit to={'/app/project/123/edit'} />}
         subtitle={
           <span>
             {formatDate(project.startDate)} – {formatDate(project.endDate)}
           </span>
         }
-        breadcrumbs={breadcrumbs}
+        title={project.name}
       >
         <ProjectInfo budget={project.budget} location={project.location} />
         <Notes notes={project.notes} />

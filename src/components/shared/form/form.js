@@ -12,7 +12,7 @@ class Form extends PureComponent {
   static propTypes = {
     initialValues: object.isRequired,
     onSubmit: func.isRequired,
-    validationSchema: func.isRequired,
+    validationSchema: object.isRequired,
   };
 
   static defaultProps = {

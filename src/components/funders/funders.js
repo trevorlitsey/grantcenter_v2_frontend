@@ -22,8 +22,8 @@ class FundersPage extends PureComponent {
     return (
       <AppLayout
         breadcrumbs={breadcrumbs}
-        title="Funders"
         callToAction={<CTAButton.Create to="/app/funder/create" />}
+        title="Funders"
       >
         <FundersList />
       </AppLayout>
