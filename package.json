@@ -29,6 +29,7 @@
     "react-google-autocomplete": "^1.0.18",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.5.0",
+    "react-select": "^2.4.2",
     "yup": "^0.27.0"
   },
   "keywords": [
@@ -38,14 +39,20 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "npm run develop",
     "format": "prettier --write 'src/**/*.js'",
+    "lint": "eslint src",
+    "lint:fix": "npm run lint -- --fix",
     "serve": "gatsby serve",
+    "start": "npm run develop",
+    "storybook": "start-storybook --port 3001",
     "test": "jest src",
     "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.0.6",
+    "@storybook/react": "^5.0.6",
     "babel-eslint": "^10.0.1",
+    "babel-preset-gatsby": "^0.1.11",
     "eslint": "^5.15.3",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
