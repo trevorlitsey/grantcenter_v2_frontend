@@ -1,32 +1,37 @@
 module.exports = {
-  plugins: ['prettier', 'import', 'jsx-a11y', 'react', 'react-hooks'],
+  extends: 'prettier',
+  env: {
+    browser: true,
+    commonjs: true,
+    node: true,
+  },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
       modules: true,
     },
   },
-  extends: 'prettier',
-  parser: 'babel-eslint',
-  parserOptions: {
-    ecmaVersion: 8,
-  },
+  plugins: ['prettier', 'import', 'jsx-a11y', 'react', 'react-hooks'],
   rules: {
-    'prettier/prettier': 'error',
-    'react/jsx-filename-extension': 'off',
     'arrow-parens': 'off',
-    single: { allowTemplateLiterals: true },
-    'no-unused-vars': 'error',
-    'react/jsx-uses-vars': 'error',
-    'react/jsx-uses-react': 'error',
-    quotes: ['error', 'single', { avoidEscape: true }],
     'eol-last': ['error', 'always'],
-    'react-hooks/rules-of-hooks': 'error',
+    'no-unused-vars': 'error',
+    'prettier/prettier': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-  },
-  env: {
-    browser: true,
-    commonjs: true,
-    node: true,
+    'react-hooks/rules-of-hooks': 'error',
+    'react/jsx-filename-extension': 'off',
+    'react/jsx-sort-props': 'error',
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
+    quotes: ['error', 'single', { avoidEscape: true }],
+    single: { allowTemplateLiterals: true },
+    'sort-imports': [
+      'error',
+      {
+        ignoreDeclarationSort: true,
+      },
+    ],
+    'sort-keys': 'error',
   },
 };
