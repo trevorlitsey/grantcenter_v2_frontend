@@ -1,6 +1,6 @@
 const KEY_REGEX = /\{(.+)\}/g;
 
-const getNestedKey = (keyStr, obj) => {
+export const getNestedKey = (keyStr, obj) => {
   if (!keyStr) {
     throw new Error('invalid key or id string supplied to <List /> component.');
   }
@@ -8,7 +8,7 @@ const getNestedKey = (keyStr, obj) => {
   return keyStr.split('.').reduce((acc, subKey) => acc && acc[subKey], obj);
 };
 
-const substituteString = (str = '', obj) => {
+export const substituteString = (str = '', obj) => {
   return str.replace(KEY_REGEX, (_, key) => {
     const value = getNestedKey(key, obj);
 
@@ -18,9 +18,4 @@ const substituteString = (str = '', obj) => {
 
     return '';
   });
-};
-
-module.exports = {
-  getNestedKey,
-  substituteString,
 };
