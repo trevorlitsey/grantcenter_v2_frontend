@@ -29,8 +29,8 @@ class EditProject extends PureComponent {
     return (
       <AppLayout
         breadcrumbs={breadcrumbs}
-        title="Edit Project"
         subtitle="Summer Education Workshops 2018"
+        title="Edit Project"
       >
         <ProjectForm />
       </AppLayout>

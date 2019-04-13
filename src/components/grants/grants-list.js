@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { arrayOf, shape, string, number } from 'prop-types';
+import { arrayOf, number, shape, string } from 'prop-types';
 
 import List from '../shared/list';
 import Item from '../shared/item';
@@ -42,13 +42,13 @@ class GrantsList extends PureComponent {
 
     return (
       <List items={formattedGrants}>
-        <Item title="Name" source="name" to="/app/grant/{id}" />
+        <Item source="name" title="Name" to="/app/grant/{id}" />
         <Item
-          title="Funder"
           source="funder.name"
+          title="Funder"
           to="/app/funder/{funder.id}"
         />
-        <Item title="Request Amount" source="requestAmount" />
+        <Item source="requestAmount" title="Request Amount" />
       </List>
     );
   }

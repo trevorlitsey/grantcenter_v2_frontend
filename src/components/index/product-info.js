@@ -7,14 +7,14 @@ import './product-info.css';
 
 const ArrowIcon = () => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
+    height="20"
     viewBox="0 0 24 24"
     width="20"
-    height="20"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill="white"
       d="M18.59 13H3a1 1 0 0 1 0-2h15.59l-5.3-5.3a1 1 0 1 1 1.42-1.4l7 7a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.42-1.4l5.3-5.3z"
+      fill="white"
     />
   </svg>
 );
@@ -38,39 +38,39 @@ const ProductInfo = () => (
     </Heading>
     <ul>
       <ListItem
-        title="Receive full access for 12 months as a BETA subscriber"
         text="No credit card required."
+        title="Receive full access for 12 months as a BETA subscriber"
       />
       <ListItem
-        title="Unlimited grant, funder, contact and project records"
         text="Upload grants by csv. Download all your data when you need it."
+        title="Unlimited grant, funder, contact and project records"
       />
       <ListItem
-        title="Unlimited team members"
         text="Two tiers of access available."
+        title="Unlimited team members"
       />
       <ListItem
-        title="Automatic email reminders"
         text="Customizable by frequency and proximity of deadline."
+        title="Automatic email reminders"
       />
       <ListItem
-        title="Goal tracking"
         text="Stay on top of budget progress for the fiscal year."
+        title="Goal tracking"
       />
       <ListItem
-        title="Support"
         text={
           <Fragment>
             Questions? Contact the Grant Center team at{' '}
-            <a href="mailto:support@grantcenter.io" className="has-text-white">
+            <a className="has-text-white" href="mailto:support@grantcenter.io">
               support@grantcenter.io
             </a>
             . We're here to help any time.
           </Fragment>
         }
+        title="Support"
       />
     </ul>
-    <img className="block is-hidden-mobile" src={allGrants} alt="app preview" />
+    <img alt="app preview" className="block is-hidden-mobile" src={allGrants} />
   </div>
 );
 

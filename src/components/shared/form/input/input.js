@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { string, bool } from 'prop-types';
+import { bool, string } from 'prop-types';
 import {
   Input as BulmaInput,
   Textarea,

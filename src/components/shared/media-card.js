@@ -23,11 +23,11 @@ class MediaCard extends PureComponent {
         <Card.Content>
           <Media>
             <Media.Item>
-              <Heading size={4} renderAs="h3">
+              <Heading renderAs="h3" size={4}>
                 <Link to={to}>{title}</Link>
               </Heading>
               {subtitle && (
-                <Heading subtitle size={5}>
+                <Heading size={5} subtitle>
                   {subtitle}
                 </Heading>
               )}

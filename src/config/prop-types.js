@@ -1,4 +1,4 @@
-import { arrayOf, shape, string, number, bool } from 'prop-types';
+import { arrayOf, bool, number, shape, string } from 'prop-types';
 
 export const Contact = {
   id: string.isRequired,

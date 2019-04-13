@@ -29,8 +29,8 @@ class EditFunder extends PureComponent {
     return (
       <AppLayout
         breadcrumbs={breadcrumbs}
-        title="Edit Funder"
         subtitle="Ford Foundation"
+        title="Edit Funder"
       >
         <FunderForm />
       </AppLayout>

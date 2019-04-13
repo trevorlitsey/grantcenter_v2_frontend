@@ -20,7 +20,7 @@ class GrantInfo extends PureComponent {
 
     return (
       <SectionWithTitle>
-        <Field multiline kind="group">
+        <Field kind="group" multiline>
           <ProjectBudget budget={budget} />
           <ProjectLocation location={location} />
         </Field>

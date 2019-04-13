@@ -46,11 +46,11 @@ class AppLayout extends PureComponent {
         <Container>
           {breadcrumbs && (
             <Breadcrumb
+              hrefAttr="to"
               items={breadcrumbs.map(breadcrumb => ({
                 ...breadcrumb,
                 to: breadcrumb.url,
               }))}
-              hrefAttr="to"
               renderAs={Link}
             />
           )}
@@ -59,7 +59,7 @@ class AppLayout extends PureComponent {
           )}
           <Heading size={3}>{title}</Heading>
           {subtitle ? (
-            <Heading size={4} subtitle renderAs="p">
+            <Heading renderAs="p" size={4} subtitle>
               {subtitle}
             </Heading>
           ) : null}

@@ -37,9 +37,9 @@ class ReportsList extends PureComponent {
 
     return (
       <List items={formattedReports}>
-        <Item title="Name" source="name" to="/app/report/{id}" />
-        <Item title="Grant" source="grant.name" to="/app/grant/{grant.name}" />
-        <Item title="Due Date" source="dueDate" />
+        <Item source="name" title="Name" to="/app/report/{id}" />
+        <Item source="grant.name" title="Grant" to="/app/grant/{grant.name}" />
+        <Item source="dueDate" title="Due Date" />
       </List>
     );
   }

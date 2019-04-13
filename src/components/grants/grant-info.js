@@ -23,7 +23,7 @@ class GrantInfo extends PureComponent {
 
     return (
       <SectionWithTitle>
-        <Field multiline kind="group">
+        <Field kind="group" multiline>
           <GrantStatus status={status} />
           <GrantIsRolling isRolling={isRolling} />
           <ProjectTag project={project} />

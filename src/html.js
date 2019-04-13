@@ -16,24 +16,24 @@ export default class HTML extends React.Component {
       <html {...this.props.htmlAttributes}>
         <head>
           <meta charSet="utf-8" />
-          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+          <meta content="ie=edge" httpEquiv="x-ua-compatible" />
           <meta
-            name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            name="viewport"
           />
           <script
-            type="text/javascript"
             src={`https://maps.googleapis.com/maps/api/js?key=${
               process.env.GOOGLE_PLACES_API_KEY
             }&libraries=places`}
+            type="text/javascript"
           />
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
           <div
-            id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}
+            id="___gatsby"
           />
           {this.props.postBodyComponents}
         </body>

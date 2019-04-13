@@ -21,10 +21,10 @@ class FunderHeader extends PureComponent {
       <Box>
         <Level>
           <LevelItem
-            title="Annual Giving"
             text={formatDollarAmount(annualGiving)}
+            title="Annual Giving"
           />
-          <LevelItem title="Mission Focus" text={missionFocus} />
+          <LevelItem text={missionFocus} title="Mission Focus" />
         </Level>
       </Box>
     );

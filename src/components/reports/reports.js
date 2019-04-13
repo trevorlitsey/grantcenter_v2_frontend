@@ -18,7 +18,7 @@ const breadcrumbs = [
 class ProjectsPage extends PureComponent {
   render() {
     return (
-      <AppLayout title="Reports" breadcrumbs={breadcrumbs}>
+      <AppLayout breadcrumbs={breadcrumbs} title="Reports">
         <ReportsList />
       </AppLayout>
     );

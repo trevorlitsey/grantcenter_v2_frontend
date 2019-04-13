@@ -27,9 +27,9 @@ class ContactsList extends PureComponent {
 
     return (
       <List items={contacts}>
-        <Item title="Name" source="name" to="/app/contact/{id}" />
-        <Item title="Email" source="email" href="mailto:{email}" />
-        <Item title="Phone" source="phone" href="tel:{phone}" />
+        <Item source="name" title="Name" to="/app/contact/{id}" />
+        <Item href="mailto:{email}" source="email" title="Email" />
+        <Item href="tel:{phone}" source="phone" title="Phone" />
       </List>
     );
   }

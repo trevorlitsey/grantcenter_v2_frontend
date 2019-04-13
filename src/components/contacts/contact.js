@@ -57,7 +57,7 @@ class SingleContactPage extends PureComponent {
 
     return (
       <AppLayout
-        title={contact.name}
+        breadcrumbs={breadcrumbs}
         subtitle={
           <a
             href={`https://maps.google.com/?q=${contact.location}`}
@@ -66,7 +66,7 @@ class SingleContactPage extends PureComponent {
             {contact.location}
           </a>
         }
-        breadcrumbs={breadcrumbs}
+        title={contact.name}
       >
         <ContactInfo email={contact.email} phone={contact.phone} />
         <Notes notes={contact.notes} />

@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react';
-import { node, string, bool } from 'prop-types';
+import { bool, node, string } from 'prop-types';
 
 import { Help } from 'react-bulma-components/lib/components/form';
 

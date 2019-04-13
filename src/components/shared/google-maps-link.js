@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { node, string, shape } from 'prop-types';
+import { node, shape, string } from 'prop-types';
 
 class GoogleMapsLink extends PureComponent {
   static propTypes = {

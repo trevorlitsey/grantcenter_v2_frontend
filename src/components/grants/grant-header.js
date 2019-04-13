@@ -22,16 +22,16 @@ class GrantHeader extends PureComponent {
     return (
       <Box>
         <Level>
-          <LevelItem title="Due Date" text={formatDate(dueDate)} />
+          <LevelItem text={formatDate(dueDate)} title="Due Date" />
           <LevelItem
-            title="Request Amount"
             text={formatDollarAmount(requestAmount)}
+            title="Request Amount"
           />
           <LevelItem
-            title="Award Amount"
             text={awardAmount ? formatDollarAmount(awardAmount) : 'TBD'}
+            title="Award Amount"
           />
-          <LevelItem title="Confidence" text={`${confidence}%`} />
+          <LevelItem text={`${confidence}%`} title="Confidence" />
         </Level>
       </Box>
     );

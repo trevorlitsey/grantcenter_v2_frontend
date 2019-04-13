@@ -12,8 +12,8 @@ import { reports } from '../../../seed';
 
 const ReportCard = ({ id, dueDate, name, status }) => (
   <MediaCard
-    title={name}
     subtitle={<ReportStatus status={status} />}
+    title={name}
     to={`/app/report/${id}`}
   >
     <strong>Due Date:</strong> {formatDate(dueDate)}

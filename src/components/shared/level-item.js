@@ -10,7 +10,7 @@ const style = {
 const LevelItem = ({ title, text }) => (
   <Level.Item style={style}>
     <div>
-      <Heading renderAs="p" heading>
+      <Heading heading renderAs="p">
         {title}
       </Heading>
       <Heading renderAs="p">{text}</Heading>

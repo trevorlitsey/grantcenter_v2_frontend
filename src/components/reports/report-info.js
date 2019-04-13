@@ -24,7 +24,7 @@ class ReportInfo extends PureComponent {
 
     return (
       <SectionWithTitle>
-        <Field multiline kind="group">
+        <Field kind="group" multiline>
           <ReportStatus status={status} />
           <ProjectTag project={project} />
         </Field>

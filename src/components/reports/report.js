@@ -64,7 +64,7 @@ class SingleReportPage extends PureComponent {
 
     return (
       <AppLayout
-        title={report.name}
+        breadcrumbs={breadcrumbs}
         subtitle={
           <Fragment>
             <Link to={`/app/grant/${report.grant.id}`}>
@@ -76,12 +76,12 @@ class SingleReportPage extends PureComponent {
             </Link>
           </Fragment>
         }
-        breadcrumbs={breadcrumbs}
+        title={report.name}
       >
         <ReportInfo project={report.grant.project} status={report.status} />
         <ReportHeader
-          dueDate={report.dueDate}
           awardAmount={report.grant.awardAmount}
+          dueDate={report.dueDate}
           requestAmount={report.grant.requestAmount}
         />
         <Notes notes={report.notes} />

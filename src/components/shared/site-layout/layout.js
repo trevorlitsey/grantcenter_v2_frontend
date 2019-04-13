@@ -20,7 +20,6 @@ class SiteLayout extends PureComponent {
     return (
       <Fragment>
         <Helmet
-          title="Grant Center"
           meta={[
             {
               name: 'description',
@@ -28,12 +27,13 @@ class SiteLayout extends PureComponent {
             },
             { name: 'keywords', content: 'grants, fundraising' },
           ]}
+          title="Grant Center"
         >
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-114939328-2"
           />
-          <link rel="icon" href={favicon} type="image/x-icon" />
+          <link href={favicon} rel="icon" type="image/x-icon" />
         </Helmet>
         <script
           dangerouslySetInnerHTML={{

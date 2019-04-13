@@ -47,9 +47,9 @@ class FunderForm extends PureComponent {
             <Form.Control label="Name:*">
               <Input
                 error={errors.name}
+                name="name"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                name="name"
                 placeholder="Ford Foundation"
                 touched={touched.name}
                 value={values.name}
@@ -57,9 +57,9 @@ class FunderForm extends PureComponent {
             </Form.Control>
             <Form.Control label="Mission Focus:">
               <Input
+                name="missionFocus"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                name="missionFocus"
                 placeholder="Social Justice, Diversity"
                 value={values.missionFocus}
               />
@@ -67,18 +67,18 @@ class FunderForm extends PureComponent {
             <Form.Control label="Address:">
               <Input.Address
                 id="address"
+                name="address"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                name="address"
                 placeholder="320 E 43rd St, New York, NY 10017"
                 value={values.location.address}
               />
             </Form.Control>
             <Form.Control label="Average Annual Giving:">
               <Input.Dollar
+                name="annualGiving"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                name="annualGiving"
                 placeholder="127,865,430"
                 type="number"
                 value={values.annualGiving}
@@ -86,18 +86,18 @@ class FunderForm extends PureComponent {
             </Form.Control>
             <Form.Control label="Tags:">
               <Input
+                name="tags"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                name="tags"
                 placeholder="comma,separated,list"
                 value={values.tags}
               />
             </Form.Control>
             <Form.Control label="Notes:">
               <Input.Textarea
+                name="notes"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                name="notes"
                 placeholder="The Ford Foundation is an American private foundation with the mission of advancing human welfare. Created in 1936 ..."
                 value={values.notes}
               />

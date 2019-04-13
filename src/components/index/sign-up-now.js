@@ -27,11 +27,11 @@ const SignUpNow = () => (
         All your grants in one place.
       </Heading>
       <Button
-        style={{ marginBottom: extraLarge }}
-        size="large"
-        outlined
         color="white"
+        outlined
         renderAs={Link}
+        size="large"
+        style={{ marginBottom: extraLarge }}
         to="/signup"
       >
         SIGN UP NOW

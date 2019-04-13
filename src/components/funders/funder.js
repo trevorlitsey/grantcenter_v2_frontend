@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { number, shape, string, arrayOf } from 'prop-types';
+import { arrayOf, number, shape, string } from 'prop-types';
 
 import AppLayout from '../shared/app-layout';
 import Contacts from '../shared/contacts';
@@ -55,12 +55,12 @@ class SingleFunderPage extends PureComponent {
       <AppLayout
         breadcrumbs={breadcrumbs}
         callToAction={<CTAButton.Edit to={'/app/funder/123/edit'} />}
-        title={funder.name}
         subtitle={
           <GoogleMapsLink location={funder.location}>
             {funder.location.address}
           </GoogleMapsLink>
         }
+        title={funder.name}
       >
         <FunderHeader
           annualGiving={funder.annualGiving}

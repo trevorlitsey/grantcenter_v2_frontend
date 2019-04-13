@@ -18,7 +18,7 @@ const breadcrumbs = [
 class GrantsPage extends PureComponent {
   render() {
     return (
-      <AppLayout title="Grants" breadcrumbs={breadcrumbs}>
+      <AppLayout breadcrumbs={breadcrumbs} title="Grants">
         <GrantsList />
       </AppLayout>
     );

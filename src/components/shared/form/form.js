@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { object, func } from 'prop-types';
+import { func, object } from 'prop-types';
 import { Formik } from 'formik';
 
 import Button from 'react-bulma-components/lib/components/button';
@@ -39,7 +39,7 @@ class Form extends PureComponent {
             handleSubmit,
             handleReset,
           }) => (
-            <form onSubmit={handleSubmit} onReset={handleReset}>
+            <form onReset={handleReset} onSubmit={handleSubmit}>
               {children({
                 values,
                 touched,

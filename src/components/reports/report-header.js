@@ -21,16 +21,16 @@ class ReportHeader extends PureComponent {
     return (
       <Box>
         <Level>
-          <LevelItem title="Due Date" text={formatDate(dueDate)} />
+          <LevelItem text={formatDate(dueDate)} title="Due Date" />
           {awardAmount ? (
             <LevelItem
-              title="Grant Award Amount"
               text={formatDollarAmount(awardAmount)}
+              title="Grant Award Amount"
             />
           ) : (
             <LevelItem
-              title="Grant Request Amount"
               text={formatDollarAmount(requestAmount)}
+              title="Grant Request Amount"
             />
           )}
         </Level>

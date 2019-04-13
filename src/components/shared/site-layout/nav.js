@@ -35,7 +35,7 @@ class Nav extends React.PureComponent {
     const { open } = this.state;
 
     return (
-      <Navbar color="black" active={open}>
+      <Navbar active={open} color="black">
         <Navbar.Brand>
           <Navbar.Item renderAs={Link} to="/">
             <Logo />
@@ -67,8 +67,8 @@ class Nav extends React.PureComponent {
               <Fragment>
                 <hr className="is-marginless is-hidden-desktop" />
                 <Navbar.Item
-                  renderAs="a"
                   href="javascript:void(0)"
+                  renderAs="a"
                   role="button"
                 >
                   Sign Out
