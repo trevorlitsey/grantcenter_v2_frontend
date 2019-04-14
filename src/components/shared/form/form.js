@@ -41,14 +41,14 @@ class Form extends PureComponent {
           }) => (
             <form onReset={handleReset} onSubmit={handleSubmit}>
               {children({
-                values,
-                touched,
                 errors,
-                isSubmitting,
                 handleBlur,
                 handleChange,
-                handleSubmit,
                 handleReset,
+                handleSubmit,
+                isSubmitting,
+                touched,
+                values,
               })}
               <Field kind="group">
                 <Control>
