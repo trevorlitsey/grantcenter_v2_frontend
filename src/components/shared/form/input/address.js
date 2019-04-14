@@ -14,7 +14,7 @@ class AddressAutoComplete extends PureComponent {
 
   handleSelect = googleRes => {
     const { id } = this.props;
-
+    // TODO: get coordinates
     this.props.onChange({
       target: {
         id,

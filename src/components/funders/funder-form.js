@@ -1,30 +1,30 @@
 import React, { Fragment, PureComponent } from 'react';
 import * as Yup from 'yup';
 
-import { Form, Input } from '../shared/form';
+import { Form, Input, Select } from '../shared/form';
 
 const initialValues = {
-  name: '',
-  missionFocus: '',
+  annualGiving: undefined,
   location: {
     address: '',
     coordinates: [],
   },
-  annualGiving: undefined,
-  tags: '',
+  missionFocus: '',
+  name: '',
   notes: '',
+  tags: [],
 };
 
 const validationSchema = Yup.object().shape({
-  name: Yup.string().required('Please input a funder name.'),
-  missionFocus: Yup.string(),
+  annualGiving: Yup.number(),
   location: Yup.object().shape({
     address: Yup.string(),
     coordinates: Yup.array(Yup.string()),
   }),
-  annualGiving: Yup.number(),
-  tags: Yup.string(),
+  missionFocus: Yup.string(),
+  name: Yup.string().required('Please input a funder name.'),
   notes: Yup.string(),
+  tags: Yup.string(),
 });
 
 class FunderForm extends PureComponent {
@@ -85,11 +85,11 @@ class FunderForm extends PureComponent {
               />
             </Form.Control>
             <Form.Control label="Tags:">
-              <Input
+              <Select.Tags
                 name="tags"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                placeholder="comma,separated,list"
+                tags={[{ id: '1', name: 'one' }]}
                 value={values.tags}
               />
             </Form.Control>

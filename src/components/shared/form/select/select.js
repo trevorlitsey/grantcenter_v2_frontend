@@ -2,14 +2,13 @@ import React, { PureComponent } from 'react';
 import { arrayOf, bool, func, shape, string } from 'prop-types';
 import { Creatable } from 'react-select';
 
-import { logger } from '../../../helpers';
+import { logger } from '../../../../helpers';
+import { ReactSelect } from '../../../../constants';
 
-const ON_SELECT = 'select-option';
-const ON_CREATE = 'create-option';
+import TagsSelect from './tags';
 
 class Select extends PureComponent {
   static defaultProps = {
-    id: string.isRequired,
     isLoading: bool,
     items: arrayOf(
       shape({
@@ -17,12 +16,14 @@ class Select extends PureComponent {
         name: string.isRequired,
       })
     ),
+    name: string.isRequired,
     onChange: func.isRequired,
     onCreateText: func.isRequired,
     selectedItemId: string.isRequired,
   };
 
   static defaultProps = {
+    items: [],
     onCreateText: label => `Create funder: ${label}`,
   };
 
@@ -31,27 +32,25 @@ class Select extends PureComponent {
   };
 
   onChange = async (option, { action }) => {
-    const { id } = this.props;
-    const valueAsEvent = {
-      id,
-      value: option.value,
-    };
+    console.log(option);
 
-    if (action === ON_CREATE) {
-      await this.onCreate(valueAsEvent);
-    } else if (action === ON_SELECT) {
-      this.onSelect(valueAsEvent);
+    const { value } = option;
+
+    if (action === ReactSelect.ON_CREATE) {
+      return this.onCreate(value);
     }
+
+    this.onSelect(value);
   };
 
-  onCreate = async event => {
+  onCreate = async value => {
     const { onCreate } = this.props;
 
     this.setState({ isLoading: true });
 
     try {
-      await onCreate(event);
-      this.onSelect(event);
+      await onCreate(value);
+      this.onSelect(value);
     } catch (e) {
       // TODO
       logger.error(e);
@@ -60,23 +59,29 @@ class Select extends PureComponent {
     }
   };
 
-  onSelect = event => {
-    this.props.onChange(event);
+  onSelect = value => {
+    const { name } = this.props;
+    this.props.onChange({ target: { name, value } });
   };
 
   render() {
-    const { id, items, onCreateText, ...props } = this.props;
+    const { items, name, onCreateText, ...props } = this.props;
     const { isLoading } = this.state;
 
-    const value = items.find(item => item.id === this.props.value);
+    const value = items.find(item => item.id === props.value);
     const options = items.map(convertItemForSelect);
+
+    const defaultValue = options.find(
+      option => option.value === props.defaultValue
+    );
 
     return (
       <Creatable
         {...props}
         backspaceRemoves
-        id={id}
+        defaultValue={defaultValue}
         isLoading={isLoading}
+        name={name}
         onChange={this.onChange}
         options={options}
         promptTextCreator={onCreateText}
@@ -86,9 +91,11 @@ class Select extends PureComponent {
   }
 }
 
-const convertItemForSelect = item => ({
+export const convertItemForSelect = item => ({
   label: item.name,
   value: item.id,
 });
+
+Select.Tags = TagsSelect;
 
 export default Select;
