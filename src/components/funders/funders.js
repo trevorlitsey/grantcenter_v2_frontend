@@ -11,9 +11,9 @@ const breadcrumbs = [
     url: '/app',
   },
   {
+    active: true,
     name: 'Funders',
     url: '/app/funders',
-    active: true,
   },
 ];
 

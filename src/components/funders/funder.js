@@ -24,23 +24,23 @@ const breadcrumbs = [
     url: '/app/funders',
   },
   {
+    active: true,
     name: 'Ford Foundation',
     url: '/app/funder/123',
-    active: true,
   },
 ];
 
 class SingleFunderPage extends PureComponent {
   static propType = {
     grant: shape({
+      annualGiving: number,
       id: string.isRequired,
-      name: string.isRequired,
       location: shape({
         address: string.isRequired,
         coordinates: arrayOf(number).isRequired,
       }),
       missionFocus: string,
-      annualGiving: number,
+      name: string.isRequired,
     }),
   };
 
