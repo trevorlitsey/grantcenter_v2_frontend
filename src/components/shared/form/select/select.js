@@ -5,10 +5,13 @@ import { Creatable } from 'react-select';
 import { logger } from '../../../../helpers';
 import { ReactSelect } from '../../../../constants';
 
+import GrantSelect from './grant';
 import TagsSelect from './tags';
 
+import './select.css';
+
 class Select extends PureComponent {
-  static defaultProps = {
+  static propTypes = {
     isLoading: bool,
     items: arrayOf(
       shape({
@@ -19,7 +22,10 @@ class Select extends PureComponent {
     name: string.isRequired,
     onChange: func.isRequired,
     onCreateText: func.isRequired,
-    selectedItemId: string.isRequired,
+    value: shape({
+      id: string,
+      name: string,
+    }),
   };
 
   static defaultProps = {
@@ -32,9 +38,7 @@ class Select extends PureComponent {
   };
 
   onChange = async (option, { action }) => {
-    console.log(option);
-
-    const { value } = option;
+    const value = option ? convertItemFromSelect(option) : undefined;
 
     if (action === ReactSelect.ON_CREATE) {
       return this.onCreate(value);
@@ -49,7 +53,8 @@ class Select extends PureComponent {
     this.setState({ isLoading: true });
 
     try {
-      await onCreate(value);
+      // TODO: get value from this
+      await onCreate(value.name);
       this.onSelect(value);
     } catch (e) {
       // TODO
@@ -68,41 +73,41 @@ class Select extends PureComponent {
     const { items, name, onCreateText, ...props } = this.props;
     const { isLoading } = this.state;
 
-    const value = items.find(item => item.id === props.value);
-    const options = convertItemsToSelect(items);
-
-    const defaultValue = options.find(
-      option => option.value === props.defaultValue
-    );
+    const convertedValues = items.find(item => item.id === props.value);
+    const convertedOptions = convertItemsToSelect(items);
 
     return (
       <Creatable
         {...props}
         backspaceRemoves
-        defaultValue={defaultValue}
+        isClearable
         isLoading={isLoading}
         name={name}
         onChange={this.onChange}
-        options={options}
+        options={convertedOptions}
         promptTextCreator={onCreateText}
-        value={value}
+        value={convertedValues}
       />
     );
   }
 }
 
-export const convertItemsToSelect = items =>
-  items.map(item => ({
-    label: item.name,
-    value: item.id,
-  }));
+const convertItemToSelect = item => ({
+  label: item.name,
+  value: item.id,
+});
+
+const convertItemFromSelect = option => ({
+  id: option.value,
+  name: option.label,
+});
+
+export const convertItemsToSelect = items => items.map(convertItemToSelect);
 
 export const convertItemsFromSelect = options =>
-  options.map(option => ({
-    id: option.value,
-    name: option.label,
-  }));
+  options.map(convertItemFromSelect);
 
+Select.Grant = GrantSelect;
 Select.Tags = TagsSelect;
 
 export default Select;

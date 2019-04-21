@@ -97,7 +97,7 @@ class TagsSelect extends PureComponent {
         onChange={this.onChange}
         onCreate={this.onCreate}
         options={convertedOptions}
-        value={convertedValues.length ? convertedValues : undefined}
+        value={convertedValues}
       />
     );
   }

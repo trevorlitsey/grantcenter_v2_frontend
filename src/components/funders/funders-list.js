@@ -10,10 +10,10 @@ class FundersList extends PureComponent {
   static propTypes = {
     funders: arrayOf(
       shape({
-        id: string.isRequired,
-        name: string.isRequired,
-        missionFocus: string,
         annualGiving: number,
+        id: string.isRequired,
+        missionFocus: string,
+        name: string.isRequired,
       })
     ).isRequired,
   };
