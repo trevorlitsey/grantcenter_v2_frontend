@@ -13,7 +13,7 @@ const initialValues = {
   name: '',
   notes: '',
   startDate: '',
-  tags: ['1'],
+  tags: [{ id: '1', name: 'one' }],
 };
 
 const validationSchema = Yup.object().shape({
@@ -103,7 +103,6 @@ class ProjectForm extends PureComponent {
                 name="tags"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                tags={[{ id: '1', name: 'one' }, { id: '2', name: 'two' }]}
                 value={values.tags}
               />
             </Form.Control>

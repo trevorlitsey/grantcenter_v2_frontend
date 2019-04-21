@@ -69,7 +69,7 @@ class Select extends PureComponent {
     const { isLoading } = this.state;
 
     const value = items.find(item => item.id === props.value);
-    const options = items.map(convertItemForSelect);
+    const options = convertItemsToSelect(items);
 
     const defaultValue = options.find(
       option => option.value === props.defaultValue
@@ -91,10 +91,17 @@ class Select extends PureComponent {
   }
 }
 
-export const convertItemForSelect = item => ({
-  label: item.name,
-  value: item.id,
-});
+export const convertItemsToSelect = items =>
+  items.map(item => ({
+    label: item.name,
+    value: item.id,
+  }));
+
+export const convertItemsFromSelect = options =>
+  options.map(option => ({
+    id: option.value,
+    name: option.label,
+  }));
 
 Select.Tags = TagsSelect;
 

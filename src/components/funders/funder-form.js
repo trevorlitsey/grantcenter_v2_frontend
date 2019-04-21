@@ -89,7 +89,6 @@ class FunderForm extends PureComponent {
                 name="tags"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                tags={[{ id: '1', name: 'one' }]}
                 value={values.tags}
               />
             </Form.Control>

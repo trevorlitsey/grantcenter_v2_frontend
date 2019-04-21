@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { arrayOf, shape, string } from 'prop-types';
 import { Creatable } from 'react-select';
 
-import { convertItemForSelect } from './select';
+import { convertItemsFromSelect, convertItemsToSelect } from './select';
 
 import { logger } from '../../../../helpers';
 import { ReactSelect } from '../../../../constants';
@@ -18,11 +18,16 @@ class TagsSelect extends PureComponent {
         name: string.isRequired,
       })
     ).isRequired,
-    value: arrayOf(string),
+    value: arrayOf(
+      shape({
+        id: string.isRequired,
+        name: string.isRequired,
+      })
+    ).isRequired,
   };
 
   static defaultProps = {
-    tags: [],
+    tags: [{ id: '1', name: 'one' }, { id: '2', name: 'two' }],
     value: [],
   };
 
@@ -35,7 +40,7 @@ class TagsSelect extends PureComponent {
       this.onCreate(options.slice(-1));
     }
 
-    this.onSelect(options.map(option => option.value));
+    this.onSelect(convertItemsFromSelect(options));
   };
 
   onCreate = async ([option]) => {
@@ -73,25 +78,26 @@ class TagsSelect extends PureComponent {
   };
 
   render() {
-    const { name, tags, ...props } = this.props;
+    const { name, tags, value, ...props } = this.props;
     const { isLoading } = this.state;
 
-    const options = tags.map(convertItemForSelect);
-
-    const value = options.filter(option => props.value.includes(option.value));
+    const convertedOptions = convertItemsToSelect(tags);
+    const convertedValues = convertItemsToSelect(value);
 
     return (
       <Creatable
         {...props}
-        closeMenuOnSelect={options.length - value.length > 1 ? false : true}
+        closeMenuOnSelect={
+          convertedOptions.length - value.length > 1 ? false : true
+        }
         hideSelectedOptions
         isLoading={isLoading}
         isMulti
         name={name}
         onChange={this.onChange}
         onCreate={this.onCreate}
-        options={options}
-        value={value.length ? value : undefined}
+        options={convertedOptions}
+        value={convertedValues.length ? convertedValues : undefined}
       />
     );
   }
