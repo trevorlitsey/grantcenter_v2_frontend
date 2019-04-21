@@ -61,7 +61,7 @@ class ReportForm extends PureComponent {
                 onBlur={handleBlur}
                 onChange={handleChange}
                 placeholder="Due Date"
-                touched={touched.name}
+                touched={touched.dueDate}
                 type="date"
                 value={values.dueDate}
               />
@@ -71,6 +71,7 @@ class ReportForm extends PureComponent {
                 error={errors.grant && errors.grant.id}
                 onBlur={handleBlur}
                 onChange={handleChange}
+                touched={touched.dueDate}
                 value={values.grant}
               />
             </Form.Control>
