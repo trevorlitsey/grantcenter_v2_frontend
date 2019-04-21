@@ -1,13 +1,9 @@
 import React, { PureComponent } from 'react';
 import { oneOf, shape, string } from 'prop-types';
-
 import { Field } from 'react-bulma-components/lib/components/form';
-
 import ProjectTag from '../shared/project-tag';
 import SectionWithTitle from '../shared/section-with-title';
-
 import ReportStatus from '../shared/report-status';
-
 import { ReportStatuses } from '../../constants';
 
 class ReportInfo extends PureComponent {

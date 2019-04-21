@@ -1,24 +1,21 @@
 import React, { PureComponent } from 'react';
 import { arrayOf, shape, string } from 'prop-types';
-
 import List from '../shared/list';
 import Item from '../shared/item';
-
 import { formatDate } from '../../helpers';
-
 import { reports } from '../../../seed';
 
 class ReportsList extends PureComponent {
   static propTypes = {
     reports: arrayOf(
       shape({
-        id: string.isRequired,
-        name: string.isRequired,
+        dueDate: string,
         grant: shape({
           id: string.isRequired,
           name: string.isRequired,
         }).isRequired,
-        dueDate: string,
+        id: string.isRequired,
+        name: string.isRequired,
       })
     ).isRequired,
   };

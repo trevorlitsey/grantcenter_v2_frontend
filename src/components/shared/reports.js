@@ -4,8 +4,6 @@ import { arrayOf, shape, string } from 'prop-types';
 import CardList from '../shared/card-list';
 import MediaCard from '../shared/media-card';
 
-import ReportStatus from './report-status';
-
 import { formatDate } from '../../helpers';
 
 import { reports } from '../../../seed';
@@ -25,9 +23,9 @@ class Reports extends PureComponent {
   static propTypes = {
     reports: arrayOf(
       shape({
+        dueDate: string.isRequired,
         id: string.isRequired,
         name: string.isRequired,
-        dueDate: string.isRequired,
         status: string.isRequired,
       })
     ),

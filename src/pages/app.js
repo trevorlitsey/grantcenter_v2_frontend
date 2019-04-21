@@ -16,7 +16,12 @@ import {
   Project,
   Projects,
 } from '../components/projects';
-import { Report, Reports } from '../components/reports';
+import {
+  CreateReport,
+  EditReport,
+  Report,
+  Reports,
+} from '../components/reports';
 
 const App = () => <h1>This is the App</h1>;
 
@@ -36,6 +41,8 @@ export default () => (
       <Grant path="/app/grant/:id" />
       <Grants path="/app/grants" />
 
+      <CreateReport path="/app/report/create" />
+      <EditReport path="/app/report/:id/edit" />
       <Report path="/app/report/:id" />
       <Reports path="/app/reports" />
 

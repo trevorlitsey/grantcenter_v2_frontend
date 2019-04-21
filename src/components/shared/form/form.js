@@ -50,7 +50,7 @@ class Form extends PureComponent {
                 touched,
                 values,
               })}
-              <Field kind="group">
+              <Field align="right" kind="group">
                 <Control>
                   <Button color="link" disabled={isSubmitting} type="submit">
                     Submit
@@ -58,7 +58,7 @@ class Form extends PureComponent {
                 </Control>
                 <Control>
                   <Button disabled={isSubmitting} type="reset">
-                    Cancel
+                    Reset
                   </Button>
                 </Control>
               </Field>
