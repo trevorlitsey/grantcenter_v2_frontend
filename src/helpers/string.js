@@ -19,3 +19,17 @@ export const substituteString = (str = '', obj) => {
     return '';
   });
 };
+
+export const convertSnakeCaseToUpperCase = str =>
+  str
+    .split('_')
+    .map(str => {
+      if (!str) {
+        return '';
+      }
+      if (str.length === 1) {
+        return str.toUpperCase();
+      }
+      return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
+    })
+    .join(' ');
