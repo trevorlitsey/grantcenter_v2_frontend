@@ -20,9 +20,9 @@ class Grants extends PureComponent {
   static propTypes = {
     grants: arrayOf(
       shape({
+        dueDate: string.isRequired,
         id: string.isRequired,
         name: string.isRequired,
-        dueDate: string.isRequired,
         requestAmount: number.isRequired,
       })
     ),

@@ -12,11 +12,11 @@ class ProjectsList extends PureComponent {
   static propTypes = {
     projects: arrayOf(
       shape({
+        budget: number,
+        endDate: string,
         id: string.isRequired,
         name: string.isRequired,
         startDate: string,
-        endDate: string,
-        budget: number,
       })
     ).isRequired,
   };
@@ -30,8 +30,8 @@ class ProjectsList extends PureComponent {
 
     const formattedProjects = projects.map(project => ({
       ...project,
-      startDate: formatDate(project.startDate),
       endDate: formatDate(project.endDate),
+      startDate: formatDate(project.startDate),
     }));
 
     return (

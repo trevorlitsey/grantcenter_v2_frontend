@@ -26,48 +26,48 @@ const breadcrumbs = [
     url: '/app/projects',
   },
   {
+    active: true,
     name: 'Summer Education Workshops 2019',
     url: '/app/project/123',
-    active: true,
   },
 ];
 
 class SingleProjectPage extends PureComponent {
   static propType = {
     project: shape({
-      id: string.isRequired,
-      name: string.isRequired,
-      startDate: string,
-      endDate: string,
       budget: number,
-      notes: string,
-      location: shape({
-        address: string,
-        coordinates: arrayOf(number),
-      }),
-      tags: arrayOf(string).isRequired,
       contacts: arrayOf(
         shape({
+          email: string,
           id: string.isRequired,
           name: string.isRequired,
           phone: string,
-          email: string,
         })
       ).isRequired,
-      grants: arrayOf(
-        shape({
-          id: string.isRequired,
-          name: string.isRequired,
-          dueDate: string.isRequired,
-          requestAmount: number.isRequired,
-        })
-      ).isRequired,
+      endDate: string,
       funders: arrayOf(
         shape({
           id: string.isRequired,
           name: string.isRequired,
         })
       ).isRequired,
+      grants: arrayOf(
+        shape({
+          dueDate: string.isRequired,
+          id: string.isRequired,
+          name: string.isRequired,
+          requestAmount: number.isRequired,
+        })
+      ).isRequired,
+      id: string.isRequired,
+      location: shape({
+        address: string,
+        coordinates: arrayOf(number),
+      }),
+      name: string.isRequired,
+      notes: string,
+      startDate: string,
+      tags: arrayOf(string).isRequired,
     }),
   };
 

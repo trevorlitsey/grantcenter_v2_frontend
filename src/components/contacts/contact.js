@@ -19,32 +19,32 @@ const breadcrumbs = [
     url: '/app/contacts',
   },
   {
+    active: true,
     name: 'Larry Bird',
     url: '/app/contact/789',
-    active: true,
   },
 ];
 
 class SingleContactPage extends PureComponent {
   static propType = {
     contact: shape({
+      email: string,
       id: string.isRequired,
-      name: string.isRequired,
       location: string,
-      tags: arrayOf(string),
+      name: string.isRequired,
+      notes: string,
+      phone: string,
       relationships: arrayOf(
         shape({
-          id: string.isRequired,
           funder: shape({
             id: string.isRequired,
             name: string.isRequired,
           }),
+          id: string.isRequired,
           title: string.isRequired,
         })
       ).isRequired,
-      phone: string,
-      email: string,
-      notes: string,
+      tags: arrayOf(string),
     }),
   };
 

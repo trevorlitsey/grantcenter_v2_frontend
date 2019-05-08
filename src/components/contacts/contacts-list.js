@@ -10,9 +10,9 @@ class ContactsList extends PureComponent {
   static propTypes = {
     contacts: arrayOf(
       shape({
+        email: string,
         id: string.isRequired,
         name: string.isRequired,
-        email: string,
         phone: string,
       })
     ).isRequired,

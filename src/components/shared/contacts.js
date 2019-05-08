@@ -19,10 +19,10 @@ class Contacts extends PureComponent {
   static propTypes = {
     contacts: arrayOf(
       shape({
+        email: string,
         id: string.isRequired,
         name: string.isRequired,
         phone: string,
-        email: string,
       })
     ),
   };

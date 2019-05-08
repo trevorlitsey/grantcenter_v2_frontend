@@ -5,6 +5,7 @@ import { Creatable } from 'react-select';
 import { logger } from '../../../../helpers';
 import { ReactSelect } from '../../../../constants';
 
+import FunderSelect from './funder';
 import GrantSelect from './grant';
 import TagsSelect from './tags';
 
@@ -107,6 +108,7 @@ export const convertItemsToSelect = items => items.map(convertItemToSelect);
 export const convertItemsFromSelect = options =>
   options.map(convertItemFromSelect);
 
+Select.Funder = FunderSelect;
 Select.Grant = GrantSelect;
 Select.Tags = TagsSelect;
 

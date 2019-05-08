@@ -10,10 +10,10 @@ import { formatDate, formatDollarAmount } from '../../helpers';
 
 class GrantHeader extends PureComponent {
   static propTypes = {
-    dueDate: string.isRequired,
-    requestAmount: number.isRequired,
     awardAmount: number,
     confidence: number.isRequired,
+    dueDate: string.isRequired,
+    requestAmount: number.isRequired,
   };
 
   render() {

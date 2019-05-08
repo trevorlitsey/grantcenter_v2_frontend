@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "author": "Trevor Litsey <trevorlitsey@gmail.com>",
   "dependencies": {
-    "@mikaelkristiansson/domready": "^1.0.9",
     "bulma": "^0.7.4",
     "classnames": "^2.2.6",
     "date-fns": "^1.30.1",
@@ -38,6 +37,7 @@
   "license": "NONE",
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
     "lint": "eslint src",
@@ -60,6 +60,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-react-hooks": "^1.6.0",
+    "eslint-plugin-sort-keys-fix": "^1.0.1",
     "jest": "^24.5.0",
     "prettier": "^1.16.4"
   },

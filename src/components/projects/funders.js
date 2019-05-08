@@ -15,8 +15,8 @@ class Funders extends PureComponent {
     funders: arrayOf(
       shape({
         id: string.isRequired,
-        name: string.isRequired,
         missionFocus: string,
+        name: string.isRequired,
       })
     ).isRequired,
   };

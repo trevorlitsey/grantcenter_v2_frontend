@@ -6,8 +6,8 @@ import Content from 'react-bulma-components/lib/components/content';
 
 class SectionWithTitle extends PureComponent {
   static propTypes = {
-    title: string,
     children: node.isRequired,
+    title: string,
   };
 
   render() {

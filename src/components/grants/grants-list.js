@@ -8,11 +8,11 @@ class GrantsList extends PureComponent {
   static propTypes = {
     grants: arrayOf(
       shape({
-        name: string.isRequired,
         funder: shape({
           id: string.isRequired,
           name: string.isRequired,
         }).isRequired,
+        name: string.isRequired,
         requestAmount: number.isRequired,
       })
     ).isRequired,
@@ -21,12 +21,12 @@ class GrantsList extends PureComponent {
   static defaultProps = {
     grants: [
       {
-        id: '123',
-        name: 'Summer 2018',
         funder: {
           id: '456',
           name: 'Ford Foundation',
         },
+        id: '123',
+        name: 'Summer 2018',
         requestAmount: 10000,
       },
     ],

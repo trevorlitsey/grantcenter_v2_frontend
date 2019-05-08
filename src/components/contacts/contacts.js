@@ -9,9 +9,9 @@ const breadcrumbs = [
     url: '/app',
   },
   {
+    active: true,
     name: 'Contacts',
     url: '/app/contacts',
-    active: true,
   },
 ];
 

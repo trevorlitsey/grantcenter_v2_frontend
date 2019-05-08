@@ -22,10 +22,10 @@ class SiteLayout extends PureComponent {
         <Helmet
           meta={[
             {
-              name: 'description',
               content: 'a modern grants manager for non-profit applicants',
+              name: 'description',
             },
-            { name: 'keywords', content: 'grants, fundraising' },
+            { content: 'grants, fundraising', name: 'keywords' },
           ]}
           title="Grant Center"
         >

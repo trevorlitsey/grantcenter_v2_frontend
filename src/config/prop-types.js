@@ -1,13 +1,16 @@
 import { arrayOf, bool, number, shape, string } from 'prop-types';
 
 export const Contact = {
+  archived: bool,
+  email: string,
   id: string.isRequired,
-  name: string.isRequired,
   location: {
     address: string,
     coordinates: arrayOf(number),
   },
-  tags: arrayOf(string),
+  name: string.isRequired,
+  notes: string,
+  phone: string,
   relationships: arrayOf(
     shape({
       funder: {
@@ -17,8 +20,5 @@ export const Contact = {
       title: string.isRequired,
     })
   ).isRequired,
-  phone: string,
-  email: string,
-  notes: string,
-  archived: bool,
+  tags: arrayOf(string),
 };

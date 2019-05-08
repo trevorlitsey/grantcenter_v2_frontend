@@ -10,14 +10,14 @@ import Link from '../shared/link';
 
 class AppLayout extends PureComponent {
   static propTypes = {
-    callToAction: node,
     breadcrumbs: arrayOf(
-      shape({ name: string.isRequired, url: string.isRequired, active: bool })
+      shape({ active: bool, name: string.isRequired, url: string.isRequired })
         .isRequired
     ),
+    callToAction: node,
     children: node.isRequired,
-    title: string.isRequired,
     subtitle: oneOfType([node, string]),
+    title: string.isRequired,
   };
 
   static defaultProps = {
@@ -31,9 +31,9 @@ class AppLayout extends PureComponent {
         url: '#2',
       },
       {
+        active: true,
         name: 'Breadcrumb Types',
         url: '#3',
-        active: true,
       },
     ],
   };

@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
+
 import AppLayout from '../shared/app-layout';
-import CTAButton from '../shared/cta-button';
-import GrantsList from './grants-list';
+
+import GrantForm from './grant-form';
 
 const breadcrumbs = [
   {
@@ -9,24 +10,32 @@ const breadcrumbs = [
     url: '/app',
   },
   {
-    active: true,
     name: 'Grants',
     url: '/app/grants',
   },
+  {
+    name: 'Summer 2018',
+    url: '/app/grant/123',
+  },
+  {
+    active: true,
+    name: 'Edit',
+    url: '/app/grant/123/edit',
+  },
 ];
 
-class GrantsPage extends PureComponent {
+class EditGrant extends PureComponent {
   render() {
     return (
       <AppLayout
         breadcrumbs={breadcrumbs}
-        callToAction={<CTAButton.Create to="/app/grant/create" />}
-        title="Grants"
+        subtitle="Summer 2018"
+        title="Edit Grant"
       >
-        <GrantsList />
+        <GrantForm />
       </AppLayout>
     );
   }
 }
 
-export default GrantsPage;
+export default EditGrant;

@@ -9,7 +9,7 @@ import {
   Funder,
   Funders,
 } from '../components/funders';
-import { Grant, Grants } from '../components/grants';
+import { CreateGrant, EditGrant, Grant, Grants } from '../components/grants';
 import {
   CreateProject,
   EditProject,
@@ -38,6 +38,8 @@ export default () => (
       <Funder path="/app/funder/:id" />
       <Funders path="/app/funders" />
 
+      <CreateGrant path="/app/grant/create" />
+      <EditGrant path="/app/grant/:id/edit" />
       <Grant path="/app/grant/:id" />
       <Grants path="/app/grants" />
 

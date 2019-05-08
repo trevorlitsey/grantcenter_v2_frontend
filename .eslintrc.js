@@ -12,8 +12,16 @@ module.exports = {
       modules: true,
     },
   },
-  plugins: ['prettier', 'import', 'jsx-a11y', 'react', 'react-hooks'],
+  plugins: [
+    'import',
+    'jsx-a11y',
+    'prettier',
+    'react-hooks',
+    'react',
+    'sort-keys-fix',
+  ],
   rules: {
+    'sort-keys-fix/sort-keys-fix': 'warn',
     'arrow-parens': 'off',
     'eol-last': ['error', 'always'],
     'no-unused-vars': 'error',
@@ -32,6 +40,6 @@ module.exports = {
         ignoreDeclarationSort: true,
       },
     ],
-    'sort-keys': 'error',
+    // 'sort-keys': 'error',
   },
 };

@@ -3,10 +3,10 @@ import { node, shape, string } from 'prop-types';
 
 class GoogleMapsLink extends PureComponent {
   static propTypes = {
+    children: node.isRequired,
     location: shape({
       address: string.isRequired,
     }),
-    children: node.isRequired,
   };
 
   render() {

@@ -20,46 +20,46 @@ const breadcrumbs = [
     url: '/app/grants',
   },
   {
+    active: true,
     name: 'Ford Foundation – Summer 2018',
     url: '/app/grant',
-    active: true,
   },
 ];
 
 class SingleGrantPage extends PureComponent {
   static propType = {
     grant: shape({
-      name: string.isRequired,
       foundation: shape({
         name: string.isRequired,
       }).isRequired,
+      name: string.isRequired,
       requestAmount: number.isRequired,
     }),
   };
 
   static defaultProps = {
     grant: {
-      name: 'Summer 2018',
+      archived: false,
+      awardAmount: 500,
+      confidence: 80,
+      dueDate: '2018-10-09',
       funder: {
         id: '123',
         name: 'Ford Foundation',
       },
+      id: '123',
+      isRolling: false,
+      name: 'Summer 2018',
+      name: 'This is a grant',
+      notes: 'these are some notes',
       project: {
         id: '123',
         name: '2018 Education Initiative',
       },
       requestAmount: 10000,
-      id: '123',
-      name: 'This is a grant',
       requestAmount: 1000,
-      awardAmount: 500,
-      confidence: 80,
-      dueDate: '2018-10-09',
-      isRolling: false,
       status: 'SUBMITTED',
       tags: ['genOp', 'summer 2018'],
-      notes: 'these are some notes',
-      archived: false,
     },
   };
 

@@ -11,11 +11,11 @@ import ProjectTag from '../shared/project-tag';
 class GrantInfo extends PureComponent {
   static propTypes = {
     isRolling: bool,
-    status: string.isRequired,
     project: shape({
       id: string.isRequired,
       name: string.isRequired,
     }),
+    status: string.isRequired,
   };
 
   render() {

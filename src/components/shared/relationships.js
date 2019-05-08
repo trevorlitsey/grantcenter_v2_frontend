@@ -14,11 +14,11 @@ class Relationships extends PureComponent {
   static propTypes = {
     relationships: arrayOf(
       shape({
-        id: string.isRequired,
         funder: shape({
           id: string.isRequired,
           name: string.isRequired,
         }),
+        id: string.isRequired,
         title: string.isRequired,
       })
     ).isRequired,
