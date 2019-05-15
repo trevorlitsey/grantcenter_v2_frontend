@@ -7,6 +7,7 @@ import { ReactSelect } from '../../../../constants';
 
 import FunderSelect from './funder';
 import GrantSelect from './grant';
+import ProjectSelect from './project';
 import TagsSelect from './tags';
 
 import './select.css';
@@ -110,6 +111,7 @@ export const convertItemsFromSelect = options =>
 
 Select.Funder = FunderSelect;
 Select.Grant = GrantSelect;
+Select.Project = ProjectSelect;
 Select.Tags = TagsSelect;
 
 export default Select;

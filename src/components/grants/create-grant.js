@@ -16,14 +16,14 @@ const breadcrumbs = [
   {
     active: true,
     name: 'Create',
-    url: '/app/grant/new',
+    url: '/app/grant/create',
   },
 ];
 
 class CreateGrant extends PureComponent {
   render() {
     return (
-      <AppLayout breadcrumbs={breadcrumbs} title="Create Funder">
+      <AppLayout breadcrumbs={breadcrumbs} title="Create Grant">
         <GrantForm />
       </AppLayout>
     );

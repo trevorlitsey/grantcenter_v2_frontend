@@ -1,17 +1,24 @@
 import React, { Fragment, PureComponent } from 'react';
 import * as Yup from 'yup';
-
+import {
+  Select as BulmaSelect,
+  Checkbox,
+} from 'react-bulma-components/lib/components/form';
+import { GrantStatuses } from '../../constants';
+import { convertSnakeCaseToUpperCase } from '../../helpers';
+import { extraSmall } from '../../styles/spacing';
 import { Form, Input, Select } from '../shared/form';
 
 const initialValues = {
-  annualGiving: undefined,
-  location: {
-    address: '',
-    coordinates: [],
-  },
-  missionFocus: '',
+  confidence: 100,
+  dueDate: '',
+  funder: undefined,
+  isRolling: false,
   name: '',
   notes: '',
+  project: undefined,
+  requestAmount: 0,
+  status: GrantStatuses.PROSPECTIVE,
   tags: [],
 };
 
@@ -24,7 +31,7 @@ const validationSchema = Yup.object().shape({
     name: Yup.string(),
   }),
   isRolling: Yup.boolean(),
-  name: Yup.string().required('Please input a funder name.'),
+  name: Yup.string().required('Please input a grant name.'),
   notes: Yup.string(),
   project: Yup.object().shape({
     id: Yup.string(),
@@ -37,8 +44,8 @@ const validationSchema = Yup.object().shape({
 
 class GrantForm extends PureComponent {
   handleSubmit = (values, { setSubmitting }) => {
-    // TODO
     setTimeout(() => {
+      console.log(values);
       setSubmitting(false);
     }, 1000);
   };
@@ -74,12 +81,77 @@ class GrantForm extends PureComponent {
             </Form.Control>
             <Form.Control label="Request Amount:*">
               <Input.Dollar
+                error={errors.requestAmount}
                 name="requestAmount"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 placeholder="10,000"
-                type="number"
                 value={values.requestAmount}
+              />
+            </Form.Control>
+            <Form.Control label="Confidence:">
+              <BulmaSelect
+                name="confidence"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.confidence}
+              >
+                <option value="100">100%</option>
+                <option value="90">90%</option>
+                <option value="80">80%</option>
+                <option value="70">70%</option>
+                <option value="60">60%</option>
+                <option value="50">50%</option>
+                <option value="40">40%</option>
+                <option value="30">30%</option>
+                <option value="20">20%</option>
+                <option value="10">10%</option>
+                <option value="0">0%</option>
+              </BulmaSelect>
+            </Form.Control>
+            <Form.Control label="Application Status:">
+              <BulmaSelect
+                name="status"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.status}
+              >
+                {Object.entries(GrantStatuses).map(([key, value]) => (
+                  <option key={key} value={key}>
+                    {convertSnakeCaseToUpperCase(value)}
+                  </option>
+                ))}
+              </BulmaSelect>
+            </Form.Control>
+            <Form.Control label="Due Date:">
+              <Input
+                name="dueDate"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                type="date"
+                value={values.dueDate}
+              />
+              <br />
+              <Checkbox
+                checked={values.isRolling}
+                name="isRolling"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                style={{
+                  alignItems: 'center',
+                  display: 'flex',
+                  marginTop: extraSmall,
+                }}
+              >
+                <span style={{ marginLeft: extraSmall }}>Is rolling</span>
+              </Checkbox>
+            </Form.Control>
+            <Form.Control label="Project:">
+              <Select.Project
+                onBlur={handleBlur}
+                onChange={handleChange}
+                touched={touched.project}
+                value={values.project}
               />
             </Form.Control>
             <Form.Control label="Tags:">

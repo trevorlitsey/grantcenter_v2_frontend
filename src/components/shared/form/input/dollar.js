@@ -25,6 +25,7 @@ class Dollar extends PureComponent {
           <Control>
             <Input
               color={error && touched ? 'danger' : null}
+              min="0"
               value={value ? String(value) : undefined}
               {...props}
             />
