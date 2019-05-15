@@ -3,6 +3,7 @@ import { arrayOf, shape, string } from 'prop-types';
 
 import CardList from '../shared/card-list';
 import MediaCard from '../shared/media-card';
+import ReportStatus from '../shared/report-status';
 
 import { formatDate } from '../../helpers';
 

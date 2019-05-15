@@ -3,6 +3,7 @@ import { number, shape, string } from 'prop-types';
 import { Link } from 'gatsby';
 
 import AppLayout from '../shared/app-layout';
+import CTAButton from '../shared/cta-button';
 import Notes from '../shared/notes';
 import Reports from '../shared/reports';
 import Tags from '../shared/tags';
@@ -69,6 +70,7 @@ class SingleGrantPage extends PureComponent {
     return (
       <AppLayout
         breadcrumbs={breadcrumbs}
+        callToAction={<CTAButton.Edit to={'/app/grant/123/edit'} />}
         subtitle={
           <Link to={`/app/funder/${grant.funder.id}`}>{grant.funder.name}</Link>
         }
