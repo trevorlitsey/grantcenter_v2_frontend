@@ -40,15 +40,17 @@ class Form extends PureComponent {
             handleReset,
           }) => (
             <form onReset={handleReset} onSubmit={handleSubmit}>
-              {children({
-                errors,
-                handleBlur,
-                handleChange,
-                handleReset,
-                handleSubmit,
-                isSubmitting,
-                touched,
-                values,
+              {React.Children.map(children, child => {
+                return React.cloneElement(child, {
+                  errors,
+                  handleBlur,
+                  handleChange,
+                  handleReset,
+                  handleSubmit,
+                  isSubmitting,
+                  touched,
+                  values,
+                });
               })}
               <Field align="right" kind="group">
                 <Control>
